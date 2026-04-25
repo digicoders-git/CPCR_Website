@@ -1,9 +1,102 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { blogPosts } from './Blog'
+import { projects } from './Portfolio'
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState(null)
+
   return (
     <main className="font-sans bg-white text-gray-900">
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 lg:p-10">
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row z-10"
+            >
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white flex items-center justify-center z-20 transition-all"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+                <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent hidden md:block"></div>
+                <div className="absolute bottom-8 left-8 text-white hidden md:block">
+                  <span className="bg-[#c8102e] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 block w-fit">
+                    {selectedProject.category}
+                  </span>
+                  <h2 className="text-3xl font-bold leading-tight">{selectedProject.title}</h2>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto bg-white flex flex-col">
+                <div className="md:hidden mb-6">
+                  <span className="text-[#c8102e] font-extrabold text-[11px] uppercase tracking-widest mb-2 block">
+                    {selectedProject.category}
+                  </span>
+                  <h2 className="text-2xl font-bold text-gray-900">{selectedProject.title}</h2>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">LOCATION</p>
+                    <p className="text-gray-900 font-bold text-sm">{selectedProject.location}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">DATE</p>
+                    <p className="text-gray-900 font-bold text-sm">{selectedProject.date || '2024-25'}</p>
+                  </div>
+                  <div className="col-span-2">
+                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">CLIENT</p>
+                    <p className="text-gray-900 font-bold text-sm">{selectedProject.client || 'Confidential'}</p>
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-100 pt-8 flex-grow">
+                  <h4 className="text-gray-900 font-bold text-base mb-4">Project Overview</h4>
+                  <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6">
+                    {selectedProject.description || 'A comprehensive constituency-wide engagement conducted to understand ground sentiments and electoral dynamics.'}
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {['Scientific Data Collection', 'Demographic Segmentation', 'Actionable Strategic Reports'].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[13px] text-gray-700 font-medium">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-1.5 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-6 mt-auto">
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="w-full bg-gray-900 text-white font-bold py-4 rounded-xl hover:bg-[#c8102e] transition-all flex items-center justify-center gap-2 group"
+                  >
+                    Close Details
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 md:pt-48 md:pb-40 px-6 lg:px-20 border-b border-gray-100 flex flex-col items-center text-center overflow-hidden">
         {/* Full Background Image Overlay */}
@@ -121,7 +214,7 @@ export default function Home() {
                 
                 {/* Connecting Line for mobile (hidden on sm+) */}
                 <div className="sm:hidden absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-200 -translate-x-1/2 z-0"></div>
-
+ 
                 <div className="flex flex-col items-center relative z-10 bg-white py-2">
                   <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#c8102e] text-white flex items-center justify-center shadow-lg mb-5">
                     <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -133,13 +226,13 @@ export default function Home() {
                     <p className="text-gray-500 text-[11px] md:text-xs font-medium">Data Collection</p>
                   </div>
                 </div>
-
+ 
                 <div className="hidden sm:flex text-gray-400 items-center justify-center w-8">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </div>
-
+ 
                 <div className="flex flex-col items-center relative z-10 bg-white py-2">
                   <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#1a1a1a] text-white flex items-center justify-center shadow-lg mb-5">
                     <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -151,13 +244,13 @@ export default function Home() {
                     <p className="text-gray-500 text-[11px] md:text-xs font-medium">Processing</p>
                   </div>
                 </div>
-
+ 
                 <div className="hidden sm:flex text-gray-400 items-center justify-center w-8">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </div>
-
+ 
                 <div className="flex flex-col items-center relative z-10 bg-white py-2">
                   <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#c8102e] text-white flex items-center justify-center shadow-lg mb-5">
                     <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -170,13 +263,13 @@ export default function Home() {
                     <p className="text-gray-500 text-[11px] md:text-xs font-medium">& Insights</p>
                   </div>
                 </div>
-
+ 
                 <div className="hidden sm:flex text-gray-400 items-center justify-center w-8">
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </div>
-
+ 
                 <div className="flex flex-col items-center relative z-10 bg-white py-2">
                   <div className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-[#1a1a1a] text-white flex items-center justify-center shadow-lg mb-5">
                     <svg className="w-8 h-8 md:w-10 md:h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -188,59 +281,116 @@ export default function Home() {
                     <p className="text-gray-500 text-[11px] md:text-xs font-medium">& Action</p>
                   </div>
                 </div>
-
+ 
               </div>
             </div>
           </div>
         </div>
       </section>
-
+ 
       {/* Our Work Snapshot Section */}
       <section className="bg-white py-16 px-6 lg:px-20">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-[13px] font-extrabold text-gray-900 uppercase tracking-widest mb-10">OUR WORK SNAPSHOT</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group">
+            <div 
+              onClick={() => setSelectedProject(projects.find(p => p.id === 1))}
+              className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group cursor-pointer hover:shadow-xl transition-all"
+            >
               <div className="h-56 w-full bg-gray-200 overflow-hidden">
                 <img src="/work-1.png" alt="Constituency Survey" className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="p-6 text-center">
-                <h4 className="font-extrabold text-gray-900 text-base mb-1">Constituency Survey</h4>
+                <h4 className="font-extrabold text-gray-900 text-base mb-1 group-hover:text-[#c8102e] transition-colors">Constituency Survey</h4>
                 <p className="text-gray-500 text-[13px] font-medium">Rajasthan | 2024</p>
               </div>
             </div>
-
-            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group">
+ 
+            <div 
+              onClick={() => setSelectedProject(projects.find(p => p.id === 2))}
+              className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group cursor-pointer hover:shadow-xl transition-all"
+            >
               <div className="h-56 w-full bg-gray-200 overflow-hidden">
                 <img src="/work-2.png" alt="Voter Opinion Study" className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="p-6 text-center">
-                <h4 className="font-extrabold text-gray-900 text-base mb-1">Voter Opinion Study</h4>
+                <h4 className="font-extrabold text-gray-900 text-base mb-1 group-hover:text-[#c8102e] transition-colors">Voter Opinion Study</h4>
                 <p className="text-gray-500 text-[13px] font-medium">Uttar Pradesh | 2024</p>
               </div>
             </div>
-
-            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group">
+ 
+            <div 
+              onClick={() => setSelectedProject(projects.find(p => p.id === 4))}
+              className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group cursor-pointer hover:shadow-xl transition-all"
+            >
               <div className="h-56 w-full bg-gray-200 overflow-hidden">
                 <img src="/work-3.png" alt="Booth Level Survey" className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="p-6 text-center">
-                <h4 className="font-extrabold text-gray-900 text-base mb-1">Booth Level Survey</h4>
+                <h4 className="font-extrabold text-gray-900 text-base mb-1 group-hover:text-[#c8102e] transition-colors">Booth Level Survey</h4>
                 <p className="text-gray-500 text-[13px] font-medium">Madhya Pradesh | 2024</p>
               </div>
             </div>
-
-            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group">
+ 
+            <div 
+              onClick={() => setSelectedProject(projects.find(p => p.id === 7))}
+              className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group cursor-pointer hover:shadow-xl transition-all"
+            >
               <div className="h-56 w-full bg-gray-200 overflow-hidden">
                 <img src="/work-4.png" alt="Data Analysis Report" className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
               </div>
               <div className="p-6 text-center">
-                <h4 className="font-extrabold text-gray-900 text-base mb-1">Data Analysis Report</h4>
+                <h4 className="font-extrabold text-gray-900 text-base mb-1 group-hover:text-[#c8102e] transition-colors">Data Analysis Report</h4>
                 <p className="text-gray-500 text-[13px] font-medium">Multiple Constituencies</p>
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Latest Insights Section (Blog Carousel) */}
+      <section className="bg-white py-16 border-t border-gray-100 overflow-hidden">
+        <div className="px-6 lg:px-20 mb-10">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-[13px] font-extrabold text-gray-900 uppercase tracking-widest">LATEST INSIGHTS</h2>
+          </div>
+        </div>
+
+        <div className="relative group">
+          <div className="animate-marquee gap-8 px-4">
+            {/* First Set of Posts */}
+            {[...blogPosts, ...blogPosts].map((post, index) => (
+              <div 
+                key={`${post.id}-${index}`} 
+                className="w-[300px] md:w-[400px] shrink-0 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all cursor-pointer"
+              >
+                <Link to={`/blog/${post.id}`} className="block h-48 md:h-56 w-full overflow-hidden relative">
+                  <img src={post.img} alt={post.title} className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110" />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-[#c8102e] rounded-full uppercase tracking-widest shadow-sm">
+                    {post.category}
+                  </div>
+                </Link>
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-3">{post.date}</p>
+                  <Link to={`/blog/${post.id}`}>
+                    <h3 className="font-bold text-gray-900 text-lg leading-snug mb-3 hover:text-[#c8102e] transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                  </Link>
+                  <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6 line-clamp-2 flex-grow">
+                    {post.excerpt}
+                  </p>
+                  <Link to={`/blog/${post.id}`} className="text-[#c8102e] font-bold text-[13px] inline-flex items-center gap-2 group/btn">
+                    Read More
+                    <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

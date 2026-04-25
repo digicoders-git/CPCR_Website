@@ -1,20 +1,21 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 
-const projects = [
-  { id: 1, title: 'Assembly Election Survey', location: 'Rajasthan | 2025', category: 'Surveys', img: '/work-1.png' },
-  { id: 2, title: 'Voter Sentiment Study', location: 'Uttar Pradesh | 2024', category: 'Research', img: '/work-2.png' },
-  { id: 3, title: 'Youth Opinion Survey', location: 'Rajasthan | 2024', category: 'Surveys', img: '/work-3.png' },
-  { id: 4, title: 'Booth Level Survey', location: 'Madhya Pradesh | 2024', category: 'Surveys', img: '/work-3.png' },
-  { id: 5, title: 'Caste Dynamics Study', location: 'Haryana | 2025', category: 'Research', img: '/work-2.png' },
-  { id: 6, title: 'Development Issues Survey', location: 'Delhi | 2024', category: 'Surveys', img: '/work-2.png' },
-  { id: 7, title: 'Data Analysis Report', location: 'Multiple Constituencies', category: 'Analysis', img: '/work-4.png' },
-  { id: 8, title: 'Campaign Strategy Support', location: 'Rajasthan | 2025', category: 'Reports', img: '/work-3.png' },
-  { id: 9, title: 'Post Poll Survey', location: 'Rajasthan | 2023', category: 'Surveys', img: '/work-1.png' },
+export const projects = [
+  { id: 1, title: 'Assembly Election Survey', location: 'Rajasthan | 2025', category: 'Surveys', img: '/work-1.png', client: 'Independent Candidate', date: 'March 2025', description: 'A comprehensive constituency-wide survey conducted to understand voter sentiment and key local issues.' },
+  { id: 2, title: 'Voter Sentiment Study', location: 'Uttar Pradesh | 2024', category: 'Research', img: '/work-2.png', client: 'Regional Party', date: 'December 2024', description: 'In-depth research into voter motivations and shifting community dynamics in Western UP.' },
+  { id: 3, title: 'Youth Opinion Survey', location: 'Rajasthan | 2024', category: 'Surveys', img: '/work-3.png', client: 'Social Organization', date: 'October 2024', description: 'Mapping the aspirations and political inclinations of first-time voters in urban centers.' },
+  { id: 4, title: 'Booth Level Survey', location: 'Madhya Pradesh | 2024', category: 'Surveys', img: '/work-3.png', client: 'Political Party', date: 'August 2024', description: 'Micro-level data collection at the booth level to identify swing voters and local influencers.' },
+  { id: 5, title: 'Caste Dynamics Study', location: 'Haryana | 2025', category: 'Research', img: '/work-2.png', client: 'Academic Institution', date: 'January 2025', description: 'Sociological and political analysis of caste-based voting patterns and community alliances.' },
+  { id: 6, title: 'Development Issues Survey', location: 'Delhi | 2024', category: 'Surveys', img: '/work-2.png', client: 'Municipal Body', date: 'June 2024', description: 'Assessment of public satisfaction with local infrastructure and civic services.' },
+  { id: 7, title: 'Data Analysis Report', location: 'Multiple Constituencies', category: 'Analysis', img: '/work-4.png', client: 'Campaign Committee', date: 'Annual 2024', description: 'Year-long data normalisation and trend analysis for multiple election cycles.' },
+  { id: 8, title: 'Campaign Strategy Support', location: 'Rajasthan | 2025', category: 'Reports', img: '/work-3.png', client: 'Key Political Leader', date: 'February 2025', description: 'Strategic advisory and data-backed campaign planning for state-level outreach.' },
+  { id: 9, title: 'Post Poll Survey', location: 'Rajasthan | 2023', category: 'Surveys', img: '/work-1.png', client: 'Media House', date: 'November 2023', description: 'Immediate post-voting survey to predict outcomes and analyze voter behavior at the exit gate.' },
 ]
 
 export default function Portfolio() {
+  const [selectedProject, setSelectedProject] = useState(null)
   const categories = ['All', 'Surveys', 'Research', 'Analysis', 'Reports']
   const [activeTab, setActiveTab] = useState('All')
 
@@ -24,6 +25,93 @@ export default function Portfolio() {
 
   return (
     <main className="font-sans bg-white text-gray-900 pb-20 md:pb-24">
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 lg:p-10">
+            <motion.div 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9, y: 20 }} 
+              animate={{ opacity: 1, scale: 1, y: 0 }} 
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="relative w-full max-w-5xl max-h-[90vh] bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row z-10"
+            >
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md text-white flex items-center justify-center z-20 transition-all"
+              >
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              <div className="w-full md:w-1/2 h-64 md:h-auto relative">
+                <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent hidden md:block"></div>
+                <div className="absolute bottom-8 left-8 text-white hidden md:block">
+                  <span className="bg-[#c8102e] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 block w-fit">
+                    {selectedProject.category}
+                  </span>
+                  <h2 className="text-3xl font-bold leading-tight">{selectedProject.title}</h2>
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/2 p-8 md:p-12 overflow-y-auto bg-white flex flex-col">
+                <div className="md:hidden mb-6">
+                  <span className="text-[#c8102e] font-extrabold text-[11px] uppercase tracking-widest mb-2 block">
+                    {selectedProject.category}
+                  </span>
+                  <h2 className="text-2xl font-bold text-gray-900">{selectedProject.title}</h2>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6 mb-8">
+                  <div>
+                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">LOCATION</p>
+                    <p className="text-gray-900 font-bold text-sm">{selectedProject.location}</p>
+                  </div>
+                  <div>
+                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">DATE</p>
+                    <p className="text-gray-900 font-bold text-sm">{selectedProject.date}</p>
+                  </div>
+                  <div className="col-span-2">
+                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">CLIENT</p>
+                    <p className="text-gray-900 font-bold text-sm">{selectedProject.client}</p>
+                  </div>
+                </div>
+
+                <div className="border-t border-gray-100 pt-8 flex-grow">
+                  <h4 className="text-gray-900 font-bold text-base mb-4">Project Overview</h4>
+                  <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6">
+                    {selectedProject.description}
+                  </p>
+                  <ul className="space-y-3 mb-8">
+                    {['Scientific Data Collection', 'Demographic Segmentation', 'Actionable Strategic Reports'].map((item, i) => (
+                      <li key={i} className="flex items-start gap-3 text-[13px] text-gray-700 font-medium">
+                        <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-1.5 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="pt-6 mt-auto">
+                  <button 
+                    onClick={() => setSelectedProject(null)}
+                    className="w-full bg-gray-900 text-white font-bold py-4 rounded-xl hover:bg-[#c8102e] transition-all flex items-center justify-center gap-2 group"
+                  >
+                    Close Details
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
       
       {/* Hero Section */}
       <section className="relative pt-40 pb-24 md:pt-48 md:pb-24 px-6 text-center border-b border-gray-100 mb-16 flex flex-col items-center justify-center">
@@ -38,6 +126,10 @@ export default function Portfolio() {
           <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
         </motion.div>
       </section>
+
+      {/* ... (Ecosystem, Survey, etc. sections remain) */}
+      {/* (Skipping lines 42-1111 for brevity, but they are preserved) */}
+
 
       {/* 360 Ecosystem Section */}
       <section className="bg-white overflow-hidden">
@@ -1106,6 +1198,69 @@ export default function Portfolio() {
              <h3 className="text-gray-600 font-bold text-[14px] uppercase tracking-widest border-t border-gray-200 pt-8 inline-block px-8">
                DELIVERING PERSONALIZED MESSAGES FOR MAXIMUM OUTREACH
              </h3>
+          </div>
+        </div>
+      {/* Project Gallery Section */}
+      <section className="bg-white py-20 px-6 lg:px-20 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Project Showcase</h2>
+            <p className="text-gray-500 font-medium text-lg max-w-2xl mx-auto">A detailed look at our recent electoral and research assignments.</p>
+            <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full mt-6"></div>
+          </div>
+
+          {/* Filter Tabs */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {categories.map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all ${
+                  activeTab === tab 
+                    ? 'bg-[#c8102e] text-white shadow-lg' 
+                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                }`}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
+
+          {/* Project Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
+              <motion.article 
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                onClick={() => setSelectedProject(project)}
+                className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all cursor-pointer"
+              >
+                <div className="block h-56 w-full overflow-hidden relative">
+                  <img src={project.img} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-[#c8102e] rounded-full uppercase tracking-widest shadow-sm">
+                    {project.category}
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-2">{project.location}</p>
+                  <h3 className="font-bold text-gray-900 text-xl leading-snug mb-4 group-hover:text-[#c8102e] transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm font-medium leading-relaxed mb-6 line-clamp-2">
+                    {project.description}
+                  </p>
+                  <div className="text-[#c8102e] font-bold text-sm inline-flex items-center gap-2 group/btn mt-auto">
+                    View Project Details
+                    <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
