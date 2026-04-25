@@ -4,11 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { name: 'Home', path: '/' },
+  { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/services' },
   { name: 'Portfolio', path: '/portfolio' },
   { name: 'Blog', path: '/blog' },
-  { name: 'About Us', path: '/about' },
-  { name: 'Contact', path: '/contact' },
+  // { name: 'Contact', path: '/contact' },
 ]
 
 export default function Navbar() {
@@ -59,7 +59,7 @@ export default function Navbar() {
           {/* Desktop Button */}
           <div className="hidden lg:block">
             <Link to="/contact" className="bg-[#c8102e] hover:bg-red-800 text-white text-[13px] font-bold py-2.5 px-6 rounded transition-colors">
-              Request Meeting
+              Contact
             </Link>
           </div>
 
@@ -115,7 +115,7 @@ export default function Navbar() {
                 className="mt-12"
               >
                 <Link to="/contact" className="block w-full bg-[#c8102e] text-white text-center text-lg font-bold py-4 rounded transition-colors">
-                  Request Meeting
+                  Contact
                 </Link>
                 
                 <div className="mt-10 pt-10 border-t border-gray-100 grid grid-cols-2 gap-8">

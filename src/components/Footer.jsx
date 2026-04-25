@@ -19,8 +19,11 @@ export default function Footer() {
             <Link to="/" className="inline-block mb-3">
               <span className="text-3xl font-extrabold tracking-wider text-[#c8102e]">CPCR</span>
             </Link>
-            <p className="text-[10px] font-bold text-gray-900 leading-tight uppercase mb-6">
+            <p className="text-[10px] font-bold text-gray-900 leading-tight uppercase mb-4">
               Centre for Political<br/>and Civic Research
+            </p>
+            <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6">
+              Providing reliable ground intelligence for better political decision-making.
             </p>
             {/* Social Media Icons */}
             <div className="flex items-center gap-3">
@@ -47,11 +50,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Tagline & Divider */}
-          <div className="lg:border-l-2 border-gray-100 lg:pl-10 flex items-center h-full min-h-[80px]">
-            <p className="text-gray-500 text-[13px] font-medium leading-relaxed max-w-[240px]">
-              Providing reliable ground intelligence for better political decision-making.
-            </p>
+          {/* Column 2: Services */}
+          <div className="lg:border-l-2 border-gray-100 lg:pl-10 flex flex-col">
+            <h4 className="text-gray-900 font-bold text-[13px] mb-6 uppercase tracking-widest">Our Services</h4>
+            <ul className="space-y-2.5">
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Voter Data Analysis</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Campaign Strategy</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Ground Intelligence</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Digital Media Management</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Survey & Research</Link></li>
+            </ul>
           </div>
 
           {/* Column 3: Quick Links */}
@@ -87,9 +95,9 @@ export default function Footer() {
                 </div>
                 <a href="mailto:connect@cpcr.in" className="hover:text-[#c8102e] transition-colors">connect@cpcr.in</a>
               </li>
-              <li className="flex items-start gap-3 text-gray-500 text-[13px] font-medium">
+              <li className="flex items-center gap-3 text-gray-500 text-[13px] font-medium">
                 <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
-                  <svg className="w-3.5 h-3.5 text-gray-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <svg className="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -104,7 +112,7 @@ export default function Footer() {
         {/* Bottom Legal Section */}
         <div className="mt-12 pt-6 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.25em]">
-            © 2025 CPCR. All Rights Reserved . Crafted with ❤️ by <a href="https://digicoders.in" target="_blank" rel="noopener noreferrer" className="text-[#c8102e] hover:text-[#c8102e] hover:underline text-[11px] font-bold uppercase tracking-widest transition-colors">
+            © 2026 CPCR. All Rights Reserved . Crafted with ❤️ by <a href="https://digicoders.in" target="_blank" rel="noopener noreferrer" className="text-[#c8102e] hover:text-[#c8102e] hover:underline text-[11px] font-bold uppercase tracking-widest transition-colors">
               Team Digicoders
             </a> 
           </p>

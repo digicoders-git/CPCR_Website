@@ -20,14 +20,8 @@ export default function BlogDetail() {
       
       {/* Article Header */}
       <section className="max-w-4xl mx-auto px-6 pt-12 md:pt-20 text-center">
-        <Link to="/blog" className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-[#c8102e] uppercase tracking-widest mb-10 transition-colors">
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Back to Blog
-        </Link>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-          <div className="inline-block bg-red-50 text-[#c8102e] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+          <div className="inline-block bg-red-50 text-[#c8102e] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 mt-10">
             {post.category}
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-8 leading-[1.15] tracking-tight">
@@ -90,7 +84,7 @@ export default function BlogDetail() {
         </div>
 
         {/* Share & Tags */}
-        <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6 mb-20">
           <div className="flex gap-2">
             <span className="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-bold">#PoliticalStrategy</span>
             <span className="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-bold">#DataAnalytics</span>
@@ -106,6 +100,56 @@ export default function BlogDetail() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Blogs Section */}
+      <section className="bg-gray-50 py-20 px-6 border-t border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Related Insights</h2>
+            <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((relatedPost, index) => (
+              <motion.article 
+                key={relatedPost.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer"
+              >
+                <Link to={`/blog/${relatedPost.id}`} className="block h-48 w-full overflow-hidden relative">
+                  <img 
+                    src={relatedPost.img} 
+                    alt={relatedPost.title} 
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-[#c8102e] rounded-full uppercase tracking-widest shadow-sm">
+                    {relatedPost.category}
+                  </div>
+                </Link>
+                <div className="p-6 flex flex-col flex-grow">
+                  <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">{relatedPost.date}</p>
+                  <Link to={`/blog/${relatedPost.id}`}>
+                    <h3 className="font-bold text-gray-900 text-lg leading-snug mb-3 group-hover:text-[#c8102e] transition-colors line-clamp-2">
+                      {relatedPost.title}
+                    </h3>
+                  </Link>
+                  <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6 line-clamp-2 flex-grow">
+                    {relatedPost.excerpt}
+                  </p>
+                  <Link to={`/blog/${relatedPost.id}`} className="text-[#c8102e] font-bold text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
+                    Read More
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                </div>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
