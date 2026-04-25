@@ -1200,6 +1200,8 @@ export default function Portfolio() {
              </h3>
           </div>
         </div>
+      </section>
+
       {/* Project Gallery Section */}
       <section className="bg-white py-20 px-6 lg:px-20 border-t border-gray-100">
         <div className="max-w-7xl mx-auto">
