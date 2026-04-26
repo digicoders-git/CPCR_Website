@@ -31,13 +31,8 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-20 flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/" className="flex flex-col items-start">
-            <span className="text-3xl font-extrabold tracking-wider text-[#c8102e] leading-none mb-1">
-              CPCR
-            </span>
-            <span className="text-[9px] md:text-[10px] font-medium text-gray-800 leading-tight">
-              Centre for Political<br/>and Civic Research
-            </span>
+          <Link to="/" className="flex items-center">
+            <img src="/logo.png" alt="CPCR Logo" className="h-12 md:h-16 w-auto" />
           </Link>
 
           {/* Desktop Links */}

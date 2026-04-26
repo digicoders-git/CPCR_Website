@@ -222,12 +222,7 @@ export default function About() {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12">
-               <div className="bg-[#c8102e] text-white font-extrabold text-3xl px-6 py-3 tracking-widest shadow-sm">
-                 CPCR
-               </div>
-               <div className="text-left leading-tight text-gray-900 font-bold text-xl md:text-2xl border-l-2 border-gray-300 pl-6 py-2">
-                 Centre for<br/>Political and<br/>Civic Research
-               </div>
+               <img src="/logo.png" alt="CPCR Logo" className="h-24 w-auto" />
             </div>
 
             <div className="flex flex-wrap items-center justify-center gap-4 text-gray-700 font-medium text-[15px] md:text-lg mt-8">

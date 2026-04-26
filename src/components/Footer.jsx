@@ -16,12 +16,9 @@ export default function Footer() {
           
           {/* Column 1: Logo & Name */}
           <div className="flex flex-col pr-8">
-            <Link to="/" className="inline-block mb-3">
-              <span className="text-3xl font-extrabold tracking-wider text-[#c8102e]">CPCR</span>
+            <Link to="/" className="inline-block mb-6">
+              <img src="/logo.png" alt="CPCR Logo" className="h-16 w-auto" />
             </Link>
-            <p className="text-[10px] font-bold text-gray-900 leading-tight uppercase mb-4">
-              Centre for Political<br/>and Civic Research
-            </p>
             <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6">
               Providing reliable ground intelligence for better political decision-making.
             </p>
