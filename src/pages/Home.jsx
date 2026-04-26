@@ -801,47 +801,51 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest Insights Section (Blog Carousel) */}
-      <section className="bg-white py-16 border-t border-gray-100 overflow-hidden">
-        <div className="px-6 lg:px-20 mb-10">
-          <div className="max-w-7xl mx-auto">
+      {/* Latest Insights Section */}
+      <section className="bg-white py-20 px-6 lg:px-20 border-t border-gray-100 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="mb-12">
             <h2 className="text-[13px] font-extrabold text-gray-900 uppercase tracking-widest">LATEST INSIGHTS</h2>
           </div>
-        </div>
 
-        <div className="relative group">
-          <div className="animate-marquee gap-8 px-4">
-            {/* First Set of Posts */}
-            {[...blogPosts, ...blogPosts].map((post, index) => (
-              <div 
-                key={`${post.id}-${index}`} 
-                className="w-[300px] md:w-[400px] shrink-0 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all cursor-pointer"
-              >
-                <Link to={`/blog/${post.id}`} className="block h-48 md:h-56 w-full overflow-hidden relative">
-                  <img src={post.img} alt={post.title} className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110" />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-[#c8102e] rounded-full uppercase tracking-widest shadow-sm">
-                    {post.category}
+          {/* Constrained Marquee Container */}
+          <div className="relative group overflow-hidden">
+            {/* Gradient masks for smooth fade at edges */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none hidden md:block"></div>
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none hidden md:block"></div>
+            
+            <div className="animate-marquee flex gap-8">
+              {[...blogPosts, ...blogPosts].map((post, index) => (
+                <div 
+                  key={`${post.id}-${index}`} 
+                  className="w-[300px] md:w-[400px] shrink-0 bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col hover:shadow-xl transition-all cursor-pointer group/card"
+                >
+                  <Link to={`/blog/${post.id}`} className="block h-48 md:h-56 w-full overflow-hidden relative">
+                    <img src={post.img} alt={post.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover/card:scale-110" />
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-[#c8102e] rounded-full uppercase tracking-widest shadow-sm">
+                      {post.category}
+                    </div>
+                  </Link>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <p className="text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-3">{post.date}</p>
+                    <Link to={`/blog/${post.id}`}>
+                      <h3 className="font-bold text-gray-900 text-lg leading-snug mb-3 group-hover/card:text-[#c8102e] transition-colors line-clamp-2">
+                        {post.title}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6 line-clamp-2 flex-grow">
+                      {post.excerpt}
+                    </p>
+                    <Link to={`/blog/${post.id}`} className="text-[#c8102e] font-bold text-[13px] inline-flex items-center gap-2 group/btn">
+                      Read More
+                      <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </Link>
                   </div>
-                </Link>
-                <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-gray-400 text-[11px] font-bold uppercase tracking-widest mb-3">{post.date}</p>
-                  <Link to={`/blog/${post.id}`}>
-                    <h3 className="font-bold text-gray-900 text-lg leading-snug mb-3 hover:text-[#c8102e] transition-colors line-clamp-2">
-                      {post.title}
-                    </h3>
-                  </Link>
-                  <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6 line-clamp-2 flex-grow">
-                    {post.excerpt}
-                  </p>
-                  <Link to={`/blog/${post.id}`} className="text-[#c8102e] font-bold text-[13px] inline-flex items-center gap-2 group/btn">
-                    Read More
-                    <svg className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </Link>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
