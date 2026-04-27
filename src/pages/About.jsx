@@ -46,7 +46,7 @@ export default function About() {
           {/* Right Image */}
           <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
             <div className="rounded-2xl overflow-hidden shadow-lg h-[400px] lg:h-[500px]">
-              <img src="/hero-survey.png" alt="About CPCR" className="w-full h-full object-cover" />
+              <img src="/about.png" alt="About CPCR" className="w-full h-full object-cover" />
             </div>
           </motion.div>
 
@@ -54,28 +54,28 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-gray-50 border-y border-gray-100 py-12 px-6 mb-20">
+      <section className="bg-gray-50 border-y border-gray-100 py-12 px-4 md:px-6 mb-20">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x-0 md:divide-x divide-gray-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 divide-x-0 md:divide-x divide-gray-200">
             
-            <div className="flex flex-col items-center text-center px-4">
-              <h3 className="text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">50+</h3>
-              <p className="text-gray-600 font-medium text-sm md:text-base">Constituencies<br/>Covered</p>
+            <div className="flex flex-col items-center text-center px-2 md:px-4">
+              <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">50+</h3>
+              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Constituencies<br/>Covered</p>
             </div>
             
-            <div className="flex flex-col items-center text-center px-4">
-              <h3 className="text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">1,00,000+</h3>
-              <p className="text-gray-600 font-medium text-sm md:text-base">Surveys<br/>Conducted</p>
+            <div className="flex flex-col items-center text-center px-2 md:px-4">
+              <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">1,00,000+</h3>
+              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Surveys<br/>Conducted</p>
             </div>
             
-            <div className="flex flex-col items-center text-center px-4">
-              <h3 className="text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">250+</h3>
-              <p className="text-gray-600 font-medium text-sm md:text-base">Field<br/>Investigators</p>
+            <div className="flex flex-col items-center text-center px-2 md:px-4 mt-6 md:mt-0">
+              <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">250+</h3>
+              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Field<br/>Investigators</p>
             </div>
             
-            <div className="flex flex-col items-center text-center px-4">
-              <h3 className="text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">200+</h3>
-              <p className="text-gray-600 font-medium text-sm md:text-base">Reports<br/>Delivered</p>
+            <div className="flex flex-col items-center text-center px-2 md:px-4 mt-6 md:mt-0">
+              <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">200+</h3>
+              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Reports<br/>Delivered</p>
             </div>
 
           </div>
@@ -245,8 +245,8 @@ export default function About() {
                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                  </svg>
                  <span>
-                   <a href="tel:7007700557" className="hover:text-[#c8102e] transition-colors">7007700557</a>
-                   {' | '}
+                   {/* <a href="tel:7007700557" className="hover:text-[#c8102e] transition-colors">7007700557</a>
+                   {' | '} */}
                    <a href="tel:9936599267" className="hover:text-[#c8102e] transition-colors">9936599267</a>
                  </span>
                </div>

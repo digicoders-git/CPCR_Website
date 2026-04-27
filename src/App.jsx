@@ -1,9 +1,12 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
-import Portfolio from './pages/Portfolio'
+
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import About from './pages/About'
@@ -20,6 +23,14 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-out-cubic',
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white text-dark font-sans">
       <ScrollToTop />
@@ -27,7 +38,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-        <Route path="/portfolio" element={<Portfolio />} />
+
 
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />

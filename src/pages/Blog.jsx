@@ -40,7 +40,7 @@ export const blogPosts = [
     excerpt: 'A case study on how localized messaging strategies yielded unprecedented results in recent state elections.',
     category: 'Case Study',
     date: 'November 18, 2023',
-    img: '/hero-survey.png'
+    img: '/about.png'
   },
   {
     id: 6,

@@ -6,7 +6,6 @@ const navLinks = [
   { name: 'Home', path: '/' },
   { name: 'About Us', path: '/about' },
   { name: 'Services', path: '/services' },
-  { name: 'Portfolio', path: '/portfolio' },
   { name: 'Blog', path: '/blog' },
   // { name: 'Contact', path: '/contact' },
 ]
@@ -117,14 +116,14 @@ export default function Navbar() {
                    <div>
                     <h3 className="text-gray-400 font-medium mb-4 text-xs uppercase tracking-wider">Contact</h3>
                     <ul className="space-y-2 text-sm text-gray-800 font-medium">
-                      <li>info@cpcr.in</li>
-                      <li>+91 00000 00000</li>
+                      <li>connect@cpcr.in</li>
+                      <li>+91 9936599267</li>
                     </ul>
                    </div>
                    <div>
                     <h3 className="text-gray-400 font-medium mb-4 text-xs uppercase tracking-wider">Address</h3>
                     <ul className="space-y-2 text-sm text-gray-800 font-medium">
-                      <li>Jaipur, Rajasthan</li>
+                      <li>Rajasthan to Lucknow</li>
                       <li>India</li>
                     </ul>
                    </div>
