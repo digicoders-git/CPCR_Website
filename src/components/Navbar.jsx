@@ -123,7 +123,7 @@ export default function Navbar() {
                    <div>
                     <h3 className="text-gray-400 font-medium mb-4 text-xs uppercase tracking-wider">Address</h3>
                     <ul className="space-y-2 text-sm text-gray-800 font-medium">
-                      <li>Rajasthan to Lucknow</li>
+                      <li>Lucknow Uttar Pradesh</li>
                       <li>India</li>
                     </ul>
                    </div>

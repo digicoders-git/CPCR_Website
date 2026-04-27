@@ -72,7 +72,7 @@ export default function Contact() {
               </div>
               <div>
                 <h4 className="font-extrabold text-gray-900 mb-1 text-[17px]">Address</h4>
-                <p className="text-gray-600 font-semibold">Rajasthan to Lucknow, India</p>
+                <p className="text-gray-600 font-semibold">Lucknow, India</p>
               </div>
             </div>
 
