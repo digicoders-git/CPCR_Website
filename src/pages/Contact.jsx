@@ -159,7 +159,7 @@ export default function Contact() {
       <section className="w-full h-[350px] md:h-[450px] bg-gray-200 mt-20 md:mt-24">
         <iframe 
           title="CPCR Location Map"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113911.26183021946!2d75.71189917397732!3d26.88514167954131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c4adf4c57e281%3A0xce1c63a0cf22e09!2sJaipur%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1707038166548!5m2!1sen!2sin" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d227821.98710024325!2d80.77769590559046!3d26.84890283158062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfd991f32b16b%3A0x93ccba8909978be7!2sLucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1777277834006!5m2!1sen!2sin" 
           width="100%" 
           height="100%" 
           style={{ border: 0 }} 
