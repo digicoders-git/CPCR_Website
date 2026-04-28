@@ -42,7 +42,7 @@ export default function Services() {
   const [projects, setProjects] = useState([])
   const categories = ['All', 'Surveys', 'Research', 'Analysis', 'Reports']
   const [activeTab, setActiveTab] = useState('All')
-  const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '')
+  const API_URL = (import.meta.env.VITE_API_URL || 'https://cpcr-website-backend.onrender.com').replace(/\/$/, '')
 
   useEffect(() => {
     const fetchAssignments = async () => {
