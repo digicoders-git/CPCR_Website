@@ -1,10 +1,42 @@
+import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { blogPosts } from './Blog'
+import axios from 'axios'
+
+const BASE_URL = import.meta.env.VITE_API_URL;
+const API_URL = `${BASE_URL}/api/blogs`;
 
 export default function BlogDetail() {
   const { id } = useParams()
-  const post = blogPosts.find(p => p.id === parseInt(id))
+  const [post, setPost] = useState(null)
+  const [relatedPosts, setRelatedPosts] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchPost = async () => {
+      try {
+        const [postRes, allRes] = await Promise.all([
+          axios.get(`${API_URL}/${id}`),
+          axios.get(API_URL)
+        ])
+        setPost(postRes.data)
+        setRelatedPosts(allRes.data.filter(p => p._id !== id).slice(0, 3))
+      } catch (err) {
+        console.error('Error fetching blog detail:', err)
+      } finally {
+        setLoading(false)
+      }
+    }
+    fetchPost()
+  }, [id])
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="w-12 h-12 border-4 border-[#c8102e] border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    )
+  }
 
   if (!post) {
     return (
@@ -41,7 +73,7 @@ export default function BlogDetail() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl relative"
         >
-          <img src={post.img} alt={post.title} className="w-full h-full object-cover" />
+          <img src={post.img.startsWith('http') ? post.img : `${BASE_URL}${post.img}`} alt={post.title} className="w-full h-full object-cover" />
         </motion.div>
       </section>
 
@@ -51,36 +83,8 @@ export default function BlogDetail() {
           <p className="text-xl md:text-2xl text-gray-900 font-semibold mb-10 leading-snug">
             {post.excerpt}
           </p>
-          <p className="mb-6">
-            Elections are complex systems where millions of localized variables converge into a singular mandate. As the political landscape evolves, traditional methods of mass-messaging and large-scale rallies are increasingly being supplemented—and often replaced—by hyper-targeted, data-driven strategies. 
-          </p>
-          <p className="mb-6">
-            In our recent research, we found that constituencies previously considered 'safe seats' are now highly competitive due to the rapid dissemination of digital information and shifting demographic priorities. Our comprehensive analysis of recent trends indicates that leaders who rely on real-time ground intelligence and robust data infrastructure have a significant electoral advantage.
-          </p>
           
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">The Importance of Micro-Targeting</h2>
-          <p className="mb-6">
-            By leveraging deep analytics, campaigns can now understand voter sentiment at the booth level. This allows for the creation of customized communication strategies that address the specific socio-economic concerns of small voter clusters rather than relying on a generalized manifesto.
-          </p>
-          <ul className="space-y-4 mb-8">
-            <li className="flex items-start gap-3">
-              <div className="mt-1.5 w-2 h-2 rounded-full bg-[#c8102e] shrink-0" />
-              <span><strong>Sentiment Analysis:</strong> Real-time tracking of public reaction to policy announcements.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="mt-1.5 w-2 h-2 rounded-full bg-[#c8102e] shrink-0" />
-              <span><strong>Demographic Shifts:</strong> Monitoring the changing expectations of first-time voters.</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <div className="mt-1.5 w-2 h-2 rounded-full bg-[#c8102e] shrink-0" />
-              <span><strong>Resource Allocation:</strong> Directing campaign funds and volunteers to areas with the highest swing potential.</span>
-            </li>
-          </ul>
-
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6">Conclusion</h2>
-          <p className="mb-10">
-            The era of instinct-based politics is fading. Success in modern elections demands a rigorous, scientific approach to understanding the electorate. Organizations like CPCR are at the forefront of this transformation, providing the crucial insights needed to navigate the complexities of contemporary democracy.
-          </p>
+          <div className="blog-content-container" dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
 
         {/* Share & Tags */}
@@ -112,18 +116,18 @@ export default function BlogDetail() {
             <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.filter(p => p.id !== post.id).slice(0, 3).map((relatedPost, index) => (
+            {relatedPosts.map((relatedPost, index) => (
               <motion.article 
-                key={relatedPost.id}
+                key={relatedPost._id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer"
               >
-                <Link to={`/blog/${relatedPost.id}`} className="block h-48 w-full overflow-hidden relative">
+                <Link to={`/blog/${relatedPost._id}`} className="block h-48 w-full overflow-hidden relative">
                   <img 
-                    src={relatedPost.img} 
+                    src={relatedPost.img.startsWith('http') ? relatedPost.img : `${BASE_URL}${relatedPost.img}`} 
                     alt={relatedPost.title} 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
                   />
@@ -133,7 +137,7 @@ export default function BlogDetail() {
                 </Link>
                 <div className="p-6 flex flex-col flex-grow">
                   <p className="text-gray-400 text-xs font-bold uppercase tracking-widest mb-3">{relatedPost.date}</p>
-                  <Link to={`/blog/${relatedPost.id}`}>
+                  <Link to={`/blog/${relatedPost._id}`}>
                     <h3 className="font-bold text-gray-900 text-lg leading-snug mb-3 group-hover:text-[#c8102e] transition-colors line-clamp-2">
                       {relatedPost.title}
                     </h3>
@@ -141,7 +145,7 @@ export default function BlogDetail() {
                   <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6 line-clamp-2 flex-grow">
                     {relatedPost.excerpt}
                   </p>
-                  <Link to={`/blog/${relatedPost.id}`} className="text-[#c8102e] font-bold text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
+                  <Link to={`/blog/${relatedPost._id}`} className="text-[#c8102e] font-bold text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
                     Read More
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

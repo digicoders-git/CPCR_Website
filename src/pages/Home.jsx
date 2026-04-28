@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { blogPosts } from './Blog'
-import { projects } from './Services'
+import axios from 'axios'
 
 // Standardized Section Header Component (Matching About.jsx style)
 const SectionHeader = ({ title, subtitle }) => (
@@ -41,12 +41,31 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => (
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState(null)
+  const [projects, setProjects] = useState([])
   const categories = ['All', 'Surveys', 'Research', 'Analysis', 'Reports']
   const [activeTab, setActiveTab] = useState('All')
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
+  useEffect(() => {
+    const fetchAssignments = async () => {
+      try {
+        const res = await axios.get(`${API_URL}/api/assignments`)
+        setProjects(res.data)
+      } catch (err) {
+        console.error('Failed to fetch assignments:', err)
+      }
+    }
+    fetchAssignments()
+  }, [])
 
   const filteredProjects = activeTab === 'All' 
     ? projects 
     : projects.filter(p => p.category === activeTab)
+
+  const getImageUrl = (img) => {
+    if (!img) return '/work-1.png'
+    return img.startsWith('http') ? img : `${API_URL}${img}`
+  }
 
   return (
     <main className="font-sans bg-white text-gray-900">
@@ -75,9 +94,9 @@ export default function Home() {
                 </svg>
               </button>
 
-              <div className="w-full md:w-1/2 h-64 md:h-auto relative">
-                <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent hidden md:block"></div>
+              <div className="w-full md:w-1/2 h-72 md:h-auto relative">
+                <img src={getImageUrl(selectedProject.img)} alt={selectedProject.title} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-8 left-8 text-white hidden md:block">
                   <span className="bg-[#c8102e] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-3 block w-fit">
                     {selectedProject.category}
@@ -1165,7 +1184,7 @@ export default function Home() {
               <div className="h-px bg-gray-300 w-16 md:w-32"></div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-sm font-bold text-gray-400 uppercase tracking-widest pb-20">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-sm font-bold text-gray-400 lowercase tracking-widest pb-20">
                <a href="https://cpcr.in" className="flex items-center gap-2 hover:text-[#c8102e] transition-colors">
                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
                  cpcr.in
@@ -1200,7 +1219,7 @@ export default function Home() {
             {filteredProjects.map((project, index) => (
               <motion.article key={project.id} layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: index * 0.05 }} onClick={() => setSelectedProject(project)} className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col group hover:shadow-xl transition-all cursor-pointer">
                 <div className="block h-56 w-full overflow-hidden relative">
-                  <img src={project.img} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
+                  <img src={getImageUrl(project.img)} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-[10px] font-bold text-[#c8102e] rounded-full uppercase tracking-widest shadow-sm">{project.category}</div>
                 </div>
                 <div className="p-6 flex flex-col flex-grow">

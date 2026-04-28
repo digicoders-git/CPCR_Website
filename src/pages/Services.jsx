@@ -1,18 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
-
-export const projects = [
-  { id: 1, title: 'Assembly Election Survey', location: 'Rajasthan | 2025', category: 'Surveys', img: '/work-1.png', client: 'Independent Candidate', date: 'March 2025', description: 'A comprehensive constituency-wide survey conducted to understand voter sentiment and key local issues.' },
-  { id: 2, title: 'Voter Sentiment Study', location: 'India | 2024', category: 'Research', img: '/work-2.png', client: 'Regional Party', date: 'December 2024', description: 'In-depth research into voter motivations and shifting community dynamics in Western UP.' },
-  { id: 3, title: 'Youth Opinion Survey', location: 'Rajasthan | 2024', category: 'Surveys', img: '/work-3.png', client: 'Social Organization', date: 'October 2024', description: 'Mapping the aspirations and political inclinations of first-time voters in urban centers.' },
-  { id: 4, title: 'Booth Level Survey', location: 'Madhya Pradesh | 2024', category: 'Surveys', img: '/work-3.png', client: 'Political Party', date: 'August 2024', description: 'Micro-level data collection at the booth level to identify swing voters and local influencers.' },
-  { id: 5, title: 'Caste Dynamics Study', location: 'Haryana | 2025', category: 'Research', img: '/work-2.png', client: 'Academic Institution', date: 'January 2025', description: 'Sociological and political analysis of caste-based voting patterns and community alliances.' },
-  { id: 6, title: 'Development Issues Survey', location: 'Delhi | 2024', category: 'Surveys', img: '/work-2.png', client: 'Municipal Body', date: 'June 2024', description: 'Assessment of public satisfaction with local infrastructure and civic services.' },
-  { id: 7, title: 'Data Analysis Report', location: 'Multiple Constituencies', category: 'Analysis', img: '/work-4.png', client: 'Campaign Committee', date: 'Annual 2024', description: 'Year-long data normalisation and trend analysis for multiple election cycles.' },
-  { id: 8, title: 'Campaign Strategy Support', location: 'Rajasthan | 2025', category: 'Reports', img: '/work-3.png', client: 'Key Political Leader', date: 'February 2025', description: 'Strategic advisory and data-backed campaign planning for state-level outreach.' },
-  { id: 9, title: 'Post Poll Survey', location: 'Rajasthan | 2023', category: 'Surveys', img: '/work-1.png', client: 'Media House', date: 'November 2023', description: 'Immediate post-voting survey to predict outcomes and analyze voter behavior at the exit gate.' },
-]
+import axios from 'axios'
 
 // Standardized Section Header Component (Matching About.jsx style)
 const SectionHeader = ({ title, subtitle }) => (
@@ -50,12 +39,31 @@ const FadeInWhenVisible = ({ children, delay = 0 }) => (
 
 export default function Services() {
   const [selectedProject, setSelectedProject] = useState(null)
+  const [projects, setProjects] = useState([])
   const categories = ['All', 'Surveys', 'Research', 'Analysis', 'Reports']
   const [activeTab, setActiveTab] = useState('All')
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
+  useEffect(() => {
+    const fetchAssignments = async () => {
+      try {
+        const res = await axios.get(`${API_URL}/api/assignments`)
+        setProjects(res.data)
+      } catch (err) {
+        console.error('Failed to fetch assignments:', err)
+      }
+    }
+    fetchAssignments()
+  }, [])
 
   const filteredProjects = activeTab === 'All' 
     ? projects 
     : projects.filter(p => p.category === activeTab)
+
+  const getImageUrl = (img) => {
+    if (!img) return '/work-1.png'
+    return img.startsWith('http') ? img : `${API_URL}${img}`
+  }
 
   return (
     <main className="font-sans bg-white text-gray-900 pb-20 selection:bg-[#c8102e] selection:text-white">
@@ -85,7 +93,7 @@ export default function Services() {
               </button>
 
               <div className="w-full md:w-1/2 h-72 md:h-auto relative">
-                <img src={selectedProject.img} alt={selectedProject.title} className="w-full h-full object-cover" />
+                <img src={getImageUrl(selectedProject.img)} alt={selectedProject.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-10 left-10 text-white">
                   <span className="bg-[#c8102e] px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] mb-4 block w-fit shadow-lg">
@@ -1203,7 +1211,7 @@ export default function Services() {
                 className="bg-white rounded-2xl shadow-[0_30px_60px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group hover:shadow-2xl transition-all cursor-pointer border-b-8 border-b-transparent hover:border-b-[#c8102e]"
               >
                 <div className="block h-72 w-full overflow-hidden relative">
-                  <img src={project.img} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110" />
+                  <img src={getImageUrl(project.img)} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                   <div className="absolute top-8 left-8 bg-white/95 backdrop-blur-md px-5 py-2 text-[10px] font-bold text-[#c8102e] rounded-xl uppercase tracking-[0.2em] shadow-xl">
                     {project.category}
