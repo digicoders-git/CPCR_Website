@@ -5,7 +5,7 @@ import axios from 'axios'
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' })
   const [loading, setLoading] = useState(false)
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+  const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '')
 
   const handleSubmit = async (e) => {
     e.preventDefault()

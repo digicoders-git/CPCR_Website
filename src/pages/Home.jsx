@@ -44,7 +44,7 @@ export default function Home() {
   const [posts, setPosts] = useState([])
   const categories = ['All', 'Surveys', 'Research', 'Analysis', 'Reports']
   const [activeTab, setActiveTab] = useState('All')
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+  const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:5000').replace(/\/$/, '')
 
   useEffect(() => {
     const fetchData = async () => {
