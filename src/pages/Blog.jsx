@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 
-const BASE_URL = import.meta.env.VITE_API_URL;
-const API_URL = `${BASE_URL}/api/blogs`;
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = `${BASE_URL.replace(/\/$/, '')}/api/blogs`;
 
 // We keep the export for structural compatibility, but it will be empty by default 
 // or we can keep it as a fallback if the API fails.
@@ -13,6 +13,14 @@ export const blogPosts = []
 export default function Blog() {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
+
+  const getImageUrl = (img) => {
+    if (!img) return '/portfolio-hero-bg.png';
+    if (img.startsWith('http')) return img;
+    const cleanBaseUrl = BASE_URL.replace(/\/$/, '');
+    const cleanImgPath = img.startsWith('/') ? img : `/${img}`;
+    return `${cleanBaseUrl}${cleanImgPath}`;
+  };
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -64,7 +72,7 @@ export default function Blog() {
               >
                 <Link to={`/blog/${post._id}`} className="block h-56 w-full overflow-hidden relative">
                   <img 
-                    src={post.img.startsWith('http') ? post.img : `${BASE_URL}${post.img}`} 
+                    src={getImageUrl(post.img)} 
                     alt={post.title} 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
                   />

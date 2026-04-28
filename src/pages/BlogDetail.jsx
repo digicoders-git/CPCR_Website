@@ -3,14 +3,22 @@ import { useParams, Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import axios from 'axios'
 
-const BASE_URL = import.meta.env.VITE_API_URL;
-const API_URL = `${BASE_URL}/api/blogs`;
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = `${BASE_URL.replace(/\/$/, '')}/api/blogs`;
 
 export default function BlogDetail() {
   const { id } = useParams()
   const [post, setPost] = useState(null)
   const [relatedPosts, setRelatedPosts] = useState([])
   const [loading, setLoading] = useState(true)
+
+  const getImageUrl = (img) => {
+    if (!img) return '/portfolio-hero-bg.png';
+    if (img.startsWith('http')) return img;
+    const cleanBaseUrl = BASE_URL.replace(/\/$/, '');
+    const cleanImgPath = img.startsWith('/') ? img : `/${img}`;
+    return `${cleanBaseUrl}${cleanImgPath}`;
+  };
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -73,7 +81,7 @@ export default function BlogDetail() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full h-[300px] md:h-[500px] rounded-3xl overflow-hidden shadow-2xl relative"
         >
-          <img src={post.img.startsWith('http') ? post.img : `${BASE_URL}${post.img}`} alt={post.title} className="w-full h-full object-cover" />
+          <img src={getImageUrl(post.img)} alt={post.title} className="w-full h-full object-cover" />
         </motion.div>
       </section>
 
@@ -127,7 +135,7 @@ export default function BlogDetail() {
               >
                 <Link to={`/blog/${relatedPost._id}`} className="block h-48 w-full overflow-hidden relative">
                   <img 
-                    src={relatedPost.img.startsWith('http') ? relatedPost.img : `${BASE_URL}${relatedPost.img}`} 
+                    src={getImageUrl(relatedPost.img)} 
                     alt={relatedPost.title} 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
                   />
