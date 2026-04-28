@@ -67,8 +67,11 @@ export default function Home() {
     : projects.filter(p => p.category === activeTab)
 
   const getImageUrl = (img) => {
-    if (!img) return '/work-1.png'
-    return img.startsWith('http') ? img : `${API_URL}${img}`
+    if (!img) return '/work-1.png';
+    if (img.startsWith('http')) return img;
+    const cleanBaseUrl = API_URL.replace(/\/$/, '');
+    const cleanImgPath = img.startsWith('/') ? img : `/${img}`;
+    return `${cleanBaseUrl}${cleanImgPath}`;
   }
 
   return (
