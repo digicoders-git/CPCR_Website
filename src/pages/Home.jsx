@@ -47,15 +47,20 @@ export default function Home() {
   const API_URL = (import.meta.env.VITE_API_URL || 'https://cpcr-website-backend.onrender.com').replace(/\/$/, '')
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async (retries = 3) => {
       try {
         const [projectsRes, blogsRes] = await Promise.all([
-          axios.get(`${API_URL}/api/assignments`),
-          axios.get(`${API_URL}/api/blogs`)
+          axios.get(`${API_URL}/api/assignments`, { timeout: 15000 }),
+          axios.get(`${API_URL}/api/blogs`, { timeout: 15000 })
         ])
         setProjects(projectsRes.data)
         setPosts(blogsRes.data)
       } catch (err) {
+        if (retries > 0) {
+          console.warn(`Retrying data fetch... (${retries} left)`)
+          setTimeout(() => fetchData(retries - 1), 3000)
+          return
+        }
         console.error('Failed to fetch data:', err)
       }
     }

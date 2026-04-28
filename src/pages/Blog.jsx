@@ -23,14 +23,19 @@ export default function Blog() {
   };
 
   useEffect(() => {
-    const fetchPosts = async () => {
+    const fetchPosts = async (retries = 3) => {
       try {
-        const res = await axios.get(API_URL)
+        const res = await axios.get(API_URL, { timeout: 15000 })
         setPosts(res.data)
       } catch (err) {
+        if (retries > 0) {
+          console.warn(`Retrying blogs fetch... (${retries} left)`)
+          setTimeout(() => fetchPosts(retries - 1), 3000)
+          return
+        }
         console.error('Error fetching blogs:', err)
       } finally {
-        setLoading(false)
+        if (retries === 3 || retries === 0) setLoading(false)
       }
     }
     fetchPosts()

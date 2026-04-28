@@ -45,11 +45,16 @@ export default function Services() {
   const API_URL = (import.meta.env.VITE_API_URL || 'https://cpcr-website-backend.onrender.com').replace(/\/$/, '')
 
   useEffect(() => {
-    const fetchAssignments = async () => {
+    const fetchAssignments = async (retries = 3) => {
       try {
-        const res = await axios.get(`${API_URL}/api/assignments`)
+        const res = await axios.get(`${API_URL}/api/assignments`, { timeout: 15000 })
         setProjects(res.data)
       } catch (err) {
+        if (retries > 0) {
+          console.warn(`Retrying assignments fetch... (${retries} left)`)
+          setTimeout(() => fetchAssignments(retries - 1), 3000)
+          return
+        }
         console.error('Failed to fetch assignments:', err)
       }
     }
