@@ -19,7 +19,7 @@ export default function Footer() {
             <Link to="/" className="inline-block mb-6">
               <img src="/logo.png" alt="CPCR Logo" className="h-16 w-auto" />
             </Link>
-            <p className="text-gray-500 text-sm font-medium leading-relaxed mb-6">
+            <p className="text-gray-500 text-base font-medium leading-relaxed mb-6">
               Providing reliable ground intelligence for better political decision-making.
             </p>
             {/* Social Media Icons */}
@@ -49,33 +49,33 @@ export default function Footer() {
 
           {/* Column 2: Our Services */}
           <div className="flex flex-col lg:pl-10">
-            <h4 className="text-gray-900 font-bold text-[13px] mb-6 uppercase tracking-widest">Our Services</h4>
+            <h4 className="text-gray-900 font-bold text-[15px] mb-6 uppercase tracking-widest">Our Services</h4>
             <ul className="space-y-3">
-              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Ground Surveys</Link></li>
-              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Political Research</Link></li>
-              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Voter Data Analysis</Link></li>
-              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Campaign Strategy</Link></li>
-              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Digital Media Management</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Ground Surveys</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Political Research</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Voter Data Analysis</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Campaign Strategy</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Digital Media Management</Link></li>
             </ul>
           </div>
 
           {/* Column 3: Quick Links */}
           <div className="flex flex-col lg:pl-10">
-            <h4 className="text-gray-900 font-bold text-[13px] mb-6 uppercase tracking-widest">Quick Links</h4>
+            <h4 className="text-gray-900 font-bold text-[15px] mb-6 uppercase tracking-widest">Quick Links</h4>
             <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Home</Link></li>
-              <li><Link to="/about" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">About Us</Link></li>
-              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Services</Link></li>
-              <li><Link to="/blog" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Blog</Link></li>
-              <li><Link to="/contact" className="text-gray-500 hover:text-[#c8102e] text-[13px] font-medium transition-colors">Contact</Link></li>
+              <li><Link to="/" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Home</Link></li>
+              <li><Link to="/about" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">About Us</Link></li>
+              <li><Link to="/services" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Services</Link></li>
+              <li><Link to="/blog" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Blog</Link></li>
+              <li><Link to="/contact" className="text-gray-500 hover:text-[#c8102e] text-[15px] font-medium transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           {/* Column 4: Contact Us */}
           <div className="flex flex-col lg:pl-10">
-            <h4 className="text-gray-900 font-bold text-[13px] mb-6 uppercase tracking-widest">Contact Us</h4>
+            <h4 className="text-gray-900 font-bold text-[15px] mb-6 uppercase tracking-widest">Contact Us</h4>
             <ul className="space-y-4">
-              <li className="flex items-center gap-3 text-gray-500 text-[13px] font-medium">
+              <li className="flex items-center gap-3 text-gray-500 text-[15px] font-medium">
                 <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
                   <svg className="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -83,7 +83,7 @@ export default function Footer() {
                 </div>
                 <a href="tel:+919936599267" className="hover:text-[#c8102e] transition-colors">+91 9936599267</a>
               </li>
-              <li className="flex items-center gap-3 text-gray-500 text-[13px] font-medium">
+              <li className="flex items-center gap-3 text-gray-500 text-[15px] font-medium">
                 <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
                   <svg className="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -91,7 +91,7 @@ export default function Footer() {
                 </div>
                 <a href="mailto:connect@cpcr.in" className="hover:text-[#c8102e] transition-colors">connect@cpcr.in</a>
               </li>
-              <li className="flex items-center gap-3 text-gray-500 text-[13px] font-medium">
+              <li className="flex items-center gap-3 text-gray-500 text-[15px] font-medium">
                 <div className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center shrink-0">
                   <svg className="w-3.5 h-3.5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -107,16 +107,16 @@ export default function Footer() {
 
         {/* Bottom Legal Section */}
         <div className="mt-12 pt-6 border-t border-gray-50 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.25em]">
-            © 2026 CPCR. All Rights Reserved . Crafted with ❤️ by <a href="https://digicoders.in" target="_blank" rel="noopener noreferrer" className="text-[#c8102e] hover:text-[#c8102e] hover:underline text-[11px] font-bold uppercase tracking-widest transition-colors">
+          <p className="text-gray-400 text-[12px] font-bold uppercase tracking-[0.25em]">
+            © 2026 CPCR. All Rights Reserved . Crafted with ❤️ by <a href="https://digicoders.in" target="_blank" rel="noopener noreferrer" className="text-[#c8102e] hover:text-[#c8102e] hover:underline text-[13px] font-bold uppercase tracking-widest transition-colors">
               Team Digicoders
             </a> 
           </p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy-policy" className="text-gray-400 hover:text-[#c8102e] text-[11px] font-bold uppercase tracking-widest transition-colors">
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-[#c8102e] text-[13px] font-bold uppercase tracking-widest transition-colors">
               Privacy Policy
             </Link>
-            <Link to="/terms-and-conditions" className="text-gray-400 hover:text-[#c8102e] text-[11px] font-bold uppercase tracking-widest transition-colors">
+            <Link to="/terms-and-conditions" className="text-gray-400 hover:text-[#c8102e] text-[13px] font-bold uppercase tracking-widest transition-colors">
               Terms & Conditions
             </Link>
           </div>

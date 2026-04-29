@@ -53,7 +53,7 @@ export default function Blog() {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="relative z-10 max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Latest Insights</h1>
-          <p className="text-gray-500 font-medium text-lg mb-6">Expert analysis, research findings, and political strategy updates</p>
+          <p className="text-gray-500 font-medium text-xl mb-6">Expert analysis, research findings, and political strategy updates</p>
           <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
         </motion.div>
       </section>
@@ -81,21 +81,21 @@ export default function Blog() {
                     alt={post.title} 
                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-bold text-[#c8102e] rounded-full uppercase tracking-wide shadow-sm">
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-sm font-bold text-[#c8102e] rounded-full uppercase tracking-wide shadow-sm">
                     {post.category}
                   </div>
                 </Link>
                 <div className="p-6 md:p-8 flex flex-col flex-grow">
-                  <p className="text-gray-400 text-sm font-medium mb-3">{post.date}</p>
+                  <p className="text-gray-400 text-base font-medium mb-3">{post.date}</p>
                   <Link to={`/blog/${post._id}`}>
                     <h3 className="font-extrabold text-gray-900 text-xl leading-snug mb-3 group-hover:text-[#c8102e] transition-colors line-clamp-2">
                       {post.title}
                     </h3>
                   </Link>
-                  <p className="text-gray-600 font-medium text-sm leading-relaxed mb-6 line-clamp-3 flex-grow">
+                  <p className="text-gray-600 font-medium text-base leading-relaxed mb-6 line-clamp-3 flex-grow">
                     {post.excerpt}
                   </p>
-                  <Link to={`/blog/${post._id}`} className="text-[#c8102e] font-bold text-sm inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
+                  <Link to={`/blog/${post._id}`} className="text-[#c8102e] font-bold text-base inline-flex items-center gap-2 group-hover:gap-3 transition-all mt-auto">
                     Read Article
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />

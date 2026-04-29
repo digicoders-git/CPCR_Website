@@ -34,7 +34,7 @@ export default function Contact() {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get in Touch</h1>
-          <p className="text-gray-600 font-medium text-lg mb-6 max-w-md mx-auto">
+          <p className="text-gray-600 font-medium text-xl mb-6 max-w-md mx-auto">
             We are here to help you with reliable research and strategic insights.
           </p>
           <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
@@ -56,7 +56,7 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h4 className="font-extrabold text-gray-900 mb-1 text-[17px]">Phone</h4>
+                <h4 className="font-extrabold text-gray-900 mb-1 text-[19px]">Phone</h4>
                 <p className="text-gray-600 font-semibold"> +91 9936599267</p>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h4 className="font-extrabold text-gray-900 mb-1 text-[17px]">Email</h4>
+                <h4 className="font-extrabold text-gray-900 mb-1 text-[19px]">Email</h4>
                 <p className="text-gray-600 font-semibold">connect@cpcr.in</p>
               </div>
             </div>
@@ -83,14 +83,14 @@ export default function Contact() {
                 </svg>
               </div>
               <div>
-                <h4 className="font-extrabold text-gray-900 mb-1 text-[17px]">Address</h4>
+                <h4 className="font-extrabold text-gray-900 mb-1 text-[19px]">Address</h4>
                 <p className="text-gray-600 font-semibold">Lucknow Uttar Pradesh , India</p>
               </div>
             </div>
 
             {/* Socials */}
             <div className="mt-2">
-              <h4 className="font-extrabold text-gray-900 mb-4 text-[17px]">Follow Us</h4>
+              <h4 className="font-extrabold text-gray-900 mb-4 text-[19px]">Follow Us</h4>
               <div className="flex gap-4">
                 {/* <a href="#" className="w-[42px] h-[42px] rounded-full bg-[#1877F2] flex items-center justify-center text-white hover:-translate-y-1 transition-transform shadow-md">
                   <svg className="w-[18px] h-[18px]" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -147,7 +147,7 @@ export default function Contact() {
               <button 
                 type="submit" 
                 disabled={loading}
-                className="w-full bg-[#c8102e] hover:bg-red-800 text-white font-bold py-4 rounded-lg transition-colors text-[17px] mt-1 shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full bg-[#c8102e] hover:bg-red-800 text-white font-bold py-4 rounded-lg transition-colors text-[19px] mt-1 shadow-md disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? 'Sending...' : 'Send Message'}
               </button>

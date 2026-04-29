@@ -104,7 +104,7 @@ export default function Services() {
                 <img src={getImageUrl(selectedProject.img)} alt={selectedProject.title} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                 <div className="absolute bottom-10 left-10 text-white">
-                  <span className="bg-[#c8102e] px-4 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-[0.2em] mb-4 block w-fit shadow-lg">
+                  <span className="bg-[#c8102e] px-4 py-1.5 rounded-full text-[13px] font-bold uppercase tracking-[0.2em] mb-4 block w-fit shadow-lg">
                     {selectedProject.category}
                   </span>
                   <h2 className="text-4xl font-bold leading-tight tracking-tight">{selectedProject.title}</h2>
@@ -114,16 +114,16 @@ export default function Services() {
               <div className="w-full md:w-1/2 p-10 md:p-16 overflow-y-auto bg-white flex flex-col">
                 <div className="grid grid-cols-2 gap-8 mb-10">
                   <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">LOCATION</p>
-                    <p className="text-gray-900 font-extrabold text-base">{selectedProject.location}</p>
+                    <p className="text-gray-400 text-[12px] font-bold uppercase tracking-widest mb-1">LOCATION</p>
+                    <p className="text-gray-900 font-extrabold text-lg">{selectedProject.location}</p>
                   </div>
                   <div className="p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">DATE</p>
-                    <p className="text-gray-900 font-extrabold text-base">{selectedProject.date}</p>
+                    <p className="text-gray-400 text-[12px] font-bold uppercase tracking-widest mb-1">DATE</p>
+                    <p className="text-gray-900 font-extrabold text-lg">{selectedProject.date}</p>
                   </div>
                   <div className="col-span-2 p-4 bg-gray-50 rounded-2xl border border-gray-100">
-                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest mb-1">CLIENT</p>
-                    <p className="text-gray-900 font-extrabold text-base">{selectedProject.client}</p>
+                    <p className="text-gray-400 text-[12px] font-bold uppercase tracking-widest mb-1">CLIENT</p>
+                    <p className="text-gray-900 font-extrabold text-lg">{selectedProject.client}</p>
                   </div>
                 </div>
 
@@ -132,18 +132,18 @@ export default function Services() {
                     <span className="w-8 h-1 bg-[#c8102e] rounded-full"></span>
                     Project Overview
                   </h4>
-                  <p className="text-gray-600 font-medium text-[15px] leading-relaxed mb-8">
+                  <p className="text-gray-600 font-medium text-[17px] leading-relaxed mb-8">
                     {selectedProject.description}
                   </p>
                   <div className="space-y-4">
                     {['Scientific Data Collection', 'Demographic Segmentation', 'Actionable Strategic Reports'].map((item, i) => (
                       <div key={i} className="flex items-center gap-4 bg-red-50/50 p-3 rounded-xl border border-red-100/50">
-                        <div className="w-6 h-6 rounded-full bg-[#c8102e] flex items-center justify-center text-white text-[10px]">
+                        <div className="w-6 h-6 rounded-full bg-[#c8102e] flex items-center justify-center text-white text-[12px]">
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                           </svg>
                         </div>
-                        <span className="text-gray-800 font-bold text-sm">{item}</span>
+                        <span className="text-gray-800 font-bold text-base">{item}</span>
                       </div>
                     ))}
                   </div>
@@ -174,7 +174,7 @@ export default function Services() {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="relative z-10 max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 tracking-tight">Our Services</h1>
-          <p className="text-gray-500 font-medium text-lg mb-6">Empowering political leaders with 360° ground intelligence and data-backed strategies.</p>
+          <p className="text-gray-500 font-medium text-xl mb-6">Empowering political leaders with 360° ground intelligence and data-backed strategies.</p>
           <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
         </motion.div>
       </section>
@@ -182,7 +182,7 @@ export default function Services() {
       {/* Main Services Grid (Matching Home.jsx style) */}
       <section className="bg-gray-50 py-16 px-6 lg:px-20 border-b border-gray-200">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-[13px] font-extrabold text-gray-900 uppercase tracking-widest mb-10">WHAT WE OFFER</h2>
+          <h2 className="text-[15px] font-extrabold text-gray-900 uppercase tracking-widest mb-10">WHAT WE OFFER</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { 
@@ -210,8 +210,8 @@ export default function Services() {
                 <div className="w-16 h-16 mb-6 text-[#c8102e]">
                   <svg fill="currentColor" viewBox="0 0 24 24"><path d={service.icon} /></svg>
                 </div>
-                <h3 className="text-[1.1rem] font-bold text-gray-900 mb-4">{service.title}</h3>
-                <p className="text-gray-500 text-sm leading-[1.6] font-medium">{service.desc}</p>
+                <h3 className="text-[1.2rem] font-bold text-gray-900 mb-4">{service.title}</h3>
+                <p className="text-gray-500 text-base leading-[1.6] font-medium">{service.desc}</p>
               </div>
             ))}
           </div>
@@ -333,8 +333,8 @@ export default function Services() {
 
                     {/* The External Text Box */}
                     <div className={`absolute flex flex-col bg-gray-50/90 backdrop-blur-sm px-4 py-3 rounded-xl shadow-sm border border-gray-200 pointer-events-none ${node.boxStyle}`}>
-                      <h4 className="font-bold text-gray-900 text-[11px] uppercase tracking-wide mb-1 leading-tight">{node.title}</h4>
-                      <p className="text-gray-600 text-[10px] leading-snug">{node.desc}</p>
+                      <h4 className="font-bold text-gray-900 text-[15px] uppercase tracking-wide mb-1 leading-tight">{node.title}</h4>
+                      <p className="text-gray-600 text-[14px] leading-snug">{node.desc}</p>
                     </div>
                   </div>
                 );
@@ -357,8 +357,8 @@ export default function Services() {
                   <div className="w-14 h-14 rounded-full bg-[#c8102e] text-white flex items-center justify-center mb-4 shadow-md border-4 border-white">
                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
                   </div>
-                  <h4 className="font-bold text-gray-900 text-[13px] uppercase mb-1">{item.title}</h4>
-                  <p className="text-gray-500 text-xs">{item.desc}</p>
+                  <h4 className="font-bold text-gray-900 text-[15px] uppercase mb-1">{item.title}</h4>
+                  <p className="text-gray-500 text-sm">{item.desc}</p>
                </div>
              ))}
           </div>
@@ -372,13 +372,13 @@ export default function Services() {
              ].map((card, i) => (
                <FadeInWhenVisible key={i} delay={i * 0.1}>
                  <div className="bg-gray-50 p-8 rounded-3xl border border-gray-200 flex flex-col h-full shadow-sm hover:shadow-md transition-shadow">
-                    <h3 className="text-lg font-bold mb-4 text-gray-900">{card.title}</h3>
+                    <h3 className="text-xl font-bold mb-4 text-gray-900">{card.title}</h3>
                     {card.desc ? (
-                      <p className="text-gray-600 text-[13px] leading-relaxed whitespace-pre-line">{card.desc}</p>
+                      <p className="text-gray-600 text-[15px] leading-relaxed whitespace-pre-line">{card.desc}</p>
                     ) : (
                       <ul className="space-y-3">
                         {card.items.map((item, idx) => (
-                          <li key={idx} className="flex items-start text-[13px] text-gray-600">
+                          <li key={idx} className="flex items-start text-[15px] text-gray-600">
                             {item}
                           </li>
                         ))}
@@ -427,7 +427,7 @@ export default function Services() {
                   <div className="relative group">
                     <div className="absolute inset-0 bg-[#c8102e] rounded-3xl blur opacity-0 group-hover:opacity-10 transition-opacity"></div>
                     <div className="relative bg-white border-2 border-gray-100 p-8 rounded-3xl shadow-sm hover:border-[#c8102e]/30 transition-all">
-                      <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-widest flex items-center gap-3">
+                      <h4 className="text-xl font-bold text-gray-900 mb-6 uppercase tracking-widest flex items-center gap-3">
                         <span className="w-2 h-2 rounded-full bg-[#c8102e]"></span>
                         {box.title}
                       </h4>
@@ -437,7 +437,7 @@ export default function Services() {
                             <svg className="w-5 h-5 text-[#c8102e] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span className="text-gray-700 font-bold text-sm leading-tight">{item}</span>
+                            <span className="text-gray-700 font-bold text-base leading-tight">{item}</span>
                           </div>
                         ))}
                       </div>
@@ -508,10 +508,10 @@ export default function Services() {
                   </div>
 
                   <div className="relative z-10 flex-grow">
-                    <h4 className="text-[10px] font-bold text-[#c8102e] uppercase tracking-[0.2em] mb-2">{item.subtitle}</h4>
-                    <h3 className="text-lg font-bold text-gray-900 mb-6 leading-tight uppercase">{item.title}</h3>
+                    <h4 className="text-[12px] font-bold text-[#c8102e] uppercase tracking-[0.2em] mb-2">{item.subtitle}</h4>
+                    <h3 className="text-xl font-bold text-gray-900 mb-6 leading-tight uppercase">{item.title}</h3>
                     <div className="w-10 h-1 bg-gray-100 mb-6 group-hover:bg-red-200 transition-colors"></div>
-                    <p className="text-gray-500 font-medium text-sm leading-relaxed">
+                    <p className="text-gray-500 font-medium text-base leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
@@ -546,7 +546,7 @@ export default function Services() {
 
                    <div className="mt-12 p-10 bg-gray-50 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group hover:border-red-100 transition-colors">
                       <div className="absolute top-0 right-0 w-24 h-24 bg-red-50 -mr-12 -mt-12 rounded-full"></div>
-                      <h4 className="text-base font-bold text-gray-900 mb-8 uppercase tracking-widest flex items-center gap-3">
+                      <h4 className="text-lg font-bold text-gray-900 mb-8 uppercase tracking-widest flex items-center gap-3">
                         <span className="w-2 h-2 rounded-full bg-[#c8102e]"></span>
                         Qualitative Report Helps You Understand
                       </h4>
@@ -562,7 +562,7 @@ export default function Services() {
                             <svg className="w-5 h-5 text-[#c8102e] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                             </svg>
-                            <span className="text-gray-700 font-bold text-sm leading-tight">{item}</span>
+                            <span className="text-gray-700 font-bold text-base leading-tight">{item}</span>
                           </li>
                         ))}
                       </ul>
@@ -584,11 +584,11 @@ export default function Services() {
                     { t: 'Exploratory Issue Mapping', d: 'Identification of emerging, hidden & sensitive issues. Helps structure themes before large-scale studies.' }
                   ].map((item, i) => (
                     <div key={i} className="group/item">
-                      <h5 className="text-gray-900 font-bold text-base mb-2 flex items-center gap-3 group-hover/item:text-[#c8102e] transition-colors">
+                      <h5 className="text-gray-900 font-bold text-lg mb-2 flex items-center gap-3 group-hover/item:text-[#c8102e] transition-colors">
                         <span className="w-6 h-[2px] bg-[#c8102e]/20 group-hover/item:w-10 transition-all"></span>
                         {item.t}
                       </h5>
-                      <p className="text-gray-500 font-bold text-sm leading-relaxed pl-9">
+                      <p className="text-gray-500 font-bold text-base leading-relaxed pl-9">
                         {item.d}
                       </p>
                     </div>
@@ -621,8 +621,8 @@ export default function Services() {
                   <div className="w-16 h-16 rounded-2xl bg-red-50 text-[#c8102e] flex items-center justify-center mb-8 relative z-10 border border-red-100">
                     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   </div>
-                  <h3 className="text-base font-bold text-gray-900 mb-4 relative z-10 uppercase">{card.title}</h3>
-                  <p className="text-gray-500 font-medium text-sm leading-relaxed relative z-10">{card.desc}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4 relative z-10 uppercase">{card.title}</h3>
+                  <p className="text-gray-500 font-medium text-base leading-relaxed relative z-10">{card.desc}</p>
                 </div>
               </FadeInWhenVisible>
             ))}
@@ -639,7 +639,7 @@ export default function Services() {
 
         <div className="max-w-7xl mx-auto px-6 mt-24">
           <div className="text-center mb-16">
-            <p className="text-gray-700 text-lg font-medium leading-relaxed max-w-4xl mx-auto">
+            <p className="text-gray-700 text-xl font-medium leading-relaxed max-w-4xl mx-auto">
               Social media is a critical battleground for shaping voter perception. Our approach integrates clear messaging and disciplined narrative control to ensure consistent communication across all segments.
             </p>
           </div>
@@ -655,13 +655,13 @@ export default function Services() {
               <FadeInWhenVisible key={i} delay={i * 0.1}>
                 <div className="bg-white p-8 rounded-2xl border border-gray-100 flex flex-col h-full hover:shadow-xl transition-all group relative overflow-hidden">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-red-50 -mr-12 -mt-12 rounded-full transition-transform group-hover:scale-150"></div>
-                  <div className="w-10 h-10 rounded-xl bg-[#c8102e] text-white font-bold flex items-center justify-center mb-6 relative z-10 text-xs">
+                  <div className="w-10 h-10 rounded-xl bg-[#c8102e] text-white font-bold flex items-center justify-center mb-6 relative z-10 text-sm">
                     {card.step}
                   </div>
-                  <h3 className="text-[11px] font-bold text-gray-900 mb-6 uppercase tracking-[0.2em] relative z-10 border-b border-gray-100 pb-4 min-h-[50px] flex items-center">{card.title}</h3>
+                  <h3 className="text-[15px] font-extrabold text-gray-900 mb-6 uppercase tracking-[0.2em] relative z-10 border-b border-gray-100 pb-4 min-h-[50px] flex items-center">{card.title}</h3>
                   <ul className="space-y-3 relative z-10">
                     {card.points.map((p, idx) => (
-                      <li key={idx} className="text-gray-500 text-[11px] font-bold leading-snug flex items-start gap-2">
+                      <li key={idx} className="text-gray-600 text-[15px] font-bold leading-snug flex items-start gap-2">
                          <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-1 shrink-0"></div>
                          {p}
                       </li>
@@ -684,7 +684,7 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-6 mt-24">
           <div className="text-center mb-20">
             <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-6 uppercase tracking-tight">Targeted, Phased Outreach Ensures Effective Voter Engagement</h3>
-            <p className="text-gray-500 font-medium text-lg max-w-4xl mx-auto leading-relaxed">
+            <p className="text-gray-500 font-medium text-xl max-w-4xl mx-auto leading-relaxed">
               Our outreach is designed in three phases to systematically engage voters, build anti-incumbency sentiment, and deliver the campaign message effectively. A dedicated campaign manager coordinates end-to-end execution.
             </p>
           </div>
@@ -744,13 +744,13 @@ export default function Services() {
                     </div>
                     <span className="text-4xl font-bold text-gray-50 absolute top-8 right-8 group-hover:text-red-50 transition-colors">{phase.step}</span>
                     
-                    <h4 className="text-lg font-bold text-gray-900 mb-8 uppercase tracking-wider leading-tight">{phase.title}</h4>
+                    <h4 className="text-xl font-bold text-gray-900 mb-8 uppercase tracking-wider leading-tight">{phase.title}</h4>
                     
                     <ul className="space-y-6 flex-grow">
                       {phase.points.map((p, idx) => (
                         <li key={idx} className="flex items-start gap-4">
                           <div className="w-2 h-2 rounded-full bg-[#c8102e] mt-2 shrink-0 group-hover:scale-150 transition-transform"></div>
-                          <span className="text-gray-600 font-bold text-[15px] leading-relaxed">{p}</span>
+                          <span className="text-gray-700 font-extrabold text-[19px] leading-relaxed">{p}</span>
                         </li>
                       ))}
                     </ul>
@@ -769,7 +769,7 @@ export default function Services() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#c8102e] opacity-10 blur-[80px] -mr-32 -mt-32"></div>
             <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
                <span className="text-[#c8102e] font-bold text-xl uppercase tracking-widest italic">Outcome:</span>
-               <div className="flex flex-wrap items-center justify-center gap-4 text-white font-bold text-sm md:text-lg uppercase tracking-tight">
+               <div className="flex flex-wrap items-center justify-center gap-4 text-white font-bold text-base md:text-xl uppercase tracking-tight">
                   <span>Sustained engagement</span>
                   <svg className="w-6 h-6 text-[#c8102e]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}><path d="M9 5l7 7-7 7" /></svg>
                   <span>Increased support</span>
@@ -802,11 +802,11 @@ export default function Services() {
                   <div className="w-12 h-12 rounded-xl bg-gray-50 text-gray-300 font-bold flex items-center justify-center mb-8 border border-gray-100 group-hover:bg-[#c8102e] group-hover:text-white transition-colors">
                     {card.step}
                   </div>
-                  <h3 className="text-[13px] font-bold text-gray-900 mb-6 uppercase tracking-wider">{card.title}</h3>
+                  <h3 className="text-[16px] font-black text-gray-900 mb-6 uppercase tracking-wider">{card.title}</h3>
                   <div className="h-0.5 bg-gray-100 w-full mb-6 group-hover:bg-red-100 transition-colors"></div>
                   <ul className="space-y-3 mt-auto">
                     {card.points.map((p, idx) => (
-                      <li key={idx} className="text-gray-500 text-[11px] font-bold leading-snug flex items-start gap-2">
+                      <li key={idx} className="text-gray-700 text-[15px] font-extrabold leading-snug flex items-start gap-2">
                          <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-1 shrink-0"></div>
                          {p}
                       </li>
@@ -909,7 +909,7 @@ export default function Services() {
                  className="absolute top-[58%] left-1/2 -translate-x-1/2 text-center w-full max-w-[350px] z-20"
               >
                  <h4 className="font-bold text-gray-900 text-[22px] tracking-wide mb-1 uppercase">SWING VOTERS</h4>
-                 <p className="text-gray-700 text-[13px] font-medium leading-snug">Identify high-potential swing voters for targeted persuasion</p>
+                 <p className="text-gray-700 text-[15px] font-medium leading-snug">Identify high-potential swing voters for targeted persuasion</p>
               </div>
 
               {/* Nodes */}
@@ -963,8 +963,8 @@ export default function Services() {
                 data-aos-delay={idx * 100} 
                 className="bg-gray-50 p-6 rounded-2xl border border-gray-100 text-center"
               >
-                <h4 className="font-bold text-[#c8102e] uppercase text-[15px] mb-2">{item.title}</h4>
-                <p className="text-gray-600 font-medium text-[13px]">{item.desc}</p>
+                <h4 className="font-bold text-[#c8102e] uppercase text-[17px] mb-2">{item.title}</h4>
+                <p className="text-gray-600 font-medium text-[15px]">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -982,7 +982,7 @@ export default function Services() {
                 <div className="h-px bg-gray-300 w-12 md:w-24"></div>
              </div>
             
-             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-gray-800 font-bold text-[13px] md:text-[16px] tracking-wide">
+             <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-gray-800 font-bold text-[15px] md:text-[16px] tracking-wide">
                 <span>Seamless Execution</span>
                 <span className="text-[#c8102e] font-light text-xl">→</span>
                 <span>Coordination of Teams</span>
@@ -1035,9 +1035,9 @@ export default function Services() {
                       <path strokeLinecap="round" strokeLinejoin="round" d={card.icon} />
                     </svg>
                   </div>
-                  <h4 className="text-base font-bold text-gray-900 mb-6 uppercase tracking-widest">{card.title}</h4>
+                  <h4 className="text-lg font-bold text-gray-900 mb-6 uppercase tracking-widest">{card.title}</h4>
                   <div className="w-8 h-1 bg-red-100 mb-6 group-hover:w-16 group-hover:bg-[#c8102e] transition-all"></div>
-                  <p className="text-gray-500 font-bold text-sm leading-relaxed">
+                  <p className="text-gray-500 font-bold text-base leading-relaxed">
                     {card.desc}
                   </p>
                 </div>
@@ -1046,7 +1046,7 @@ export default function Services() {
           </div>
 
           <div className="mt-16 text-center">
-            <span className="text-[#c8102e] font-bold text-sm md:text-base uppercase tracking-[0.3em] italic">
+            <span className="text-[#c8102e] font-bold text-base md:text-lg uppercase tracking-[0.3em] italic">
               Delivering Personalized Messages for Maximum Outreach
             </span>
           </div>
@@ -1078,7 +1078,7 @@ export default function Services() {
                  </svg>
                </div>
                <h4 className="text-gray-900 font-bold text-xl mb-6">Strategic Expertise</h4>
-               <ul className="text-gray-700 text-[15px] font-medium leading-relaxed text-left w-full space-y-4">
+               <ul className="text-gray-700 text-[17px] font-medium leading-relaxed text-left w-full space-y-4">
                  <li className="flex items-start gap-3">
                    <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-2 shrink-0"></div>
                    <span>Data-driven campaign strategies</span>
@@ -1104,7 +1104,7 @@ export default function Services() {
                  </svg>
                </div>
                <h4 className="text-gray-900 font-bold text-xl mb-6">Trust & Reliability</h4>
-               <ul className="text-gray-700 text-[15px] font-medium leading-relaxed text-left w-full space-y-4">
+               <ul className="text-gray-700 text-[17px] font-medium leading-relaxed text-left w-full space-y-4">
                  <li className="flex items-start gap-3">
                    <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-2 shrink-0"></div>
                    <span>Transparent and accountable processes</span>
@@ -1129,7 +1129,7 @@ export default function Services() {
                  </svg>
                </div>
                <h4 className="text-gray-900 font-bold text-xl mb-6">Execution Excellence</h4>
-               <ul className="text-gray-700 text-[15px] font-medium leading-relaxed text-left w-full space-y-4">
+               <ul className="text-gray-700 text-[17px] font-medium leading-relaxed text-left w-full space-y-4">
                  <li className="flex items-start gap-3">
                    <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-2 shrink-0"></div>
                    <span>Seamless on-ground implementation</span>
@@ -1150,13 +1150,13 @@ export default function Services() {
           <div className="mt-24">
             <div className="flex items-center justify-center gap-6 mb-12">
               <div className="h-px bg-gray-300 w-16 md:w-32"></div>
-              <h3 className="text-gray-800 font-bold text-[13px] md:text-lg uppercase tracking-widest text-center whitespace-nowrap">
+              <h3 className="text-gray-800 font-bold text-[15px] md:text-xl uppercase tracking-widest text-center whitespace-nowrap">
                 YOUR SUCCESS IS OUR ONLY PRIORITY
               </h3>
               <div className="h-px bg-gray-300 w-16 md:w-32"></div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-sm font-bold text-gray-400 uppercase tracking-widest pb-20">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-base font-bold text-gray-400 uppercase tracking-widest pb-20">
                <a href="https://cpcr.in" className="flex items-center gap-2 hover:text-[#c8102e] transition-colors">
                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
                  cpcr.in
@@ -1181,12 +1181,12 @@ export default function Services() {
             <motion.span 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              className="text-[#c8102e] font-bold uppercase tracking-[0.4em] text-sm mb-6 block"
+              className="text-[#c8102e] font-bold uppercase tracking-[0.4em] text-base mb-6 block"
             >
               Our Work & Case Studies
             </motion.span>
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">Recent Assignments</h2>
-            <p className="text-gray-500 font-medium text-lg max-w-2xl mx-auto mb-10">A detailed look at our recent electoral and research assignments.</p>
+            <p className="text-gray-500 font-medium text-xl max-w-2xl mx-auto mb-10">A detailed look at our recent electoral and research assignments.</p>
             <div className="w-20 h-2 bg-[#c8102e] mx-auto rounded-full"></div>
           </div>
 
@@ -1195,7 +1195,7 @@ export default function Services() {
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-10 py-4 rounded-2xl text-xs font-bold uppercase tracking-widest transition-all ${
+                className={`px-10 py-4 rounded-2xl text-sm font-bold uppercase tracking-widest transition-all ${
                   activeTab === tab 
                     ? 'bg-gray-900 text-white shadow-2xl scale-110' 
                     : 'bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-900'
@@ -1221,20 +1221,20 @@ export default function Services() {
                 <div className="block h-72 w-full overflow-hidden relative">
                   <img src={getImageUrl(project.img)} alt={project.title} className="w-full h-full object-cover transform transition-transform duration-1000 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                  <div className="absolute top-8 left-8 bg-white/95 backdrop-blur-md px-5 py-2 text-[10px] font-bold text-[#c8102e] rounded-xl uppercase tracking-[0.2em] shadow-xl">
+                  <div className="absolute top-8 left-8 bg-white/95 backdrop-blur-md px-5 py-2 text-[12px] font-bold text-[#c8102e] rounded-xl uppercase tracking-[0.2em] shadow-xl">
                     {project.category}
                   </div>
                 </div>
                 <div className="p-10 flex flex-col flex-grow">
-                  <p className="text-gray-400 text-[10px] font-bold uppercase tracking-[0.25em] mb-3">{project.location}</p>
+                  <p className="text-gray-400 text-[12px] font-bold uppercase tracking-[0.25em] mb-3">{project.location}</p>
                   <h3 className="font-bold text-gray-900 text-2xl leading-tight mb-6 group-hover:text-[#c8102e] transition-colors">
                     {project.title}
                   </h3>
-                  <p className="text-gray-500 text-sm font-medium leading-relaxed mb-8 line-clamp-2">
+                  <p className="text-gray-500 text-base font-medium leading-relaxed mb-8 line-clamp-2">
                     {project.description}
                   </p>
                   <div className="pt-6 border-t border-gray-50 flex items-center justify-between mt-auto">
-                    <span className="text-[#c8102e] font-bold text-xs uppercase tracking-widest">Read More</span>
+                    <span className="text-[#c8102e] font-bold text-sm uppercase tracking-widest">Read More</span>
                     <div className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-[#c8102e] group-hover:text-white transition-all">
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -1254,7 +1254,7 @@ export default function Services() {
           <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-bold tracking-tight text-center md:text-left">
             Let's work together for better political outcomes.
           </h3>
-          <Link to="/contact" className="w-full md:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-[#c8102e] text-white font-bold py-3.5 px-8 rounded transition-colors whitespace-nowrap text-center text-lg shrink-0">
+          <Link to="/contact" className="w-full md:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-[#c8102e] text-white font-bold py-3.5 px-8 rounded transition-colors whitespace-nowrap text-center text-xl shrink-0">
             Request a Meeting
           </Link>
         </div>

@@ -29,9 +29,9 @@ export default function TermsAndConditions() {
               
               {/* Centered Breadcrumbs */}
               <div className="flex items-center gap-3 px-8">
-                <Link to="/" className="text-[10px] font-medium tracking-[0.25em] uppercase text-black hover:text-gray-500 transition-colors">HOME</Link>
-                <span className="text-gray-600 text-[10px]">/</span>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-gray-500 font-medium">TERMS AND CONDITIONS</span>
+                <Link to="/" className="text-[12px] font-medium tracking-[0.25em] uppercase text-black hover:text-gray-500 transition-colors">HOME</Link>
+                <span className="text-gray-600 text-[12px]">/</span>
+                <span className="text-[12px] tracking-[0.25em] uppercase text-gray-500 font-medium">TERMS AND CONDITIONS</span>
               </div>
               
               {/* Invisible right spacer to maintain perfect center alignment */}
@@ -59,8 +59,8 @@ export default function TermsAndConditions() {
               {/* Floating Gray Dot next to the first paragraph */}
               <div className="absolute left-0 top-[4.5rem] w-4 h-4 rounded-full bg-gray-200" />
               
-              <div className="space-y-8 text-[15px] text-gray-500 font-light">
-                <p className="text-[13px] tracking-wide mb-8">Last updated: May 24, 2024</p>
+              <div className="space-y-8 text-[17px] text-gray-500 font-light">
+                <p className="text-[15px] tracking-wide mb-8">Last updated: May 24, 2024</p>
                 
                 <p className="leading-loose">
                   Please read these terms and conditions carefully before using Our Service.

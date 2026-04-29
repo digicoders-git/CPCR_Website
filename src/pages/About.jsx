@@ -14,7 +14,7 @@ export default function About() {
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="relative z-10 max-w-2xl mx-auto">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">About CPCR</h1>
-          <p className="text-gray-500 font-medium text-lg mb-6">Delivering Accurate Research. Driving Better Decisions.</p>
+          <p className="text-gray-500 font-medium text-xl mb-6">Delivering Accurate Research. Driving Better Decisions.</p>
           <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
         </motion.div>
       </section>
@@ -27,7 +27,7 @@ export default function About() {
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
             
-            <div className="space-y-5 text-gray-700 font-medium leading-relaxed text-[15px]">
+            <div className="space-y-5 text-gray-700 font-medium leading-relaxed text-[17px]">
               <p>
                 At the Centre for Political and Civic Research (CPCR), we believe that successful political campaigns are grounded in a deep, evidence-based understanding of the electorate. Guided by our core philosophy, "The 360° View of Public Opinion," we empower political leaders and organizations with a comprehensive, ground-level perspective of public opinion.
               </p>
@@ -60,22 +60,22 @@ export default function About() {
             
             <div className="flex flex-col items-center text-center px-2 md:px-4">
               <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">50+</h3>
-              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Constituencies<br/>Covered</p>
+              <p className="text-gray-600 font-medium text-sm sm:text-base md:text-lg">Constituencies<br/>Covered</p>
             </div>
             
             <div className="flex flex-col items-center text-center px-2 md:px-4">
               <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">1,00,000+</h3>
-              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Surveys<br/>Conducted</p>
+              <p className="text-gray-600 font-medium text-sm sm:text-base md:text-lg">Surveys<br/>Conducted</p>
             </div>
             
             <div className="flex flex-col items-center text-center px-2 md:px-4 mt-6 md:mt-0">
               <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">250+</h3>
-              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Field<br/>Investigators</p>
+              <p className="text-gray-600 font-medium text-sm sm:text-base md:text-lg">Field<br/>Investigators</p>
             </div>
             
             <div className="flex flex-col items-center text-center px-2 md:px-4 mt-6 md:mt-0">
               <h3 className="text-[28px] sm:text-4xl md:text-5xl font-extrabold text-[#c8102e] mb-2">200+</h3>
-              <p className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Reports<br/>Delivered</p>
+              <p className="text-gray-600 font-medium text-sm sm:text-base md:text-lg">Reports<br/>Delivered</p>
             </div>
 
           </div>
@@ -118,7 +118,7 @@ export default function About() {
         <div className="bg-[#c8102e] py-10 px-6 text-white text-center shadow-md">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-5xl font-bold mb-3 tracking-wide">Why Partner With Us?</h2>
-            <p className="text-red-50 text-xl md:text-2xl font-medium opacity-90">
+            <p className="text-red-50 text-2xl md:text-2xl font-medium opacity-90">
               Research-led strategy. Execution-driven outcomes.
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function About() {
           
           <div className="flex items-center justify-center gap-6 mb-16">
             <div className="h-px bg-gray-300 w-32 md:w-48"></div>
-            <h3 className="text-gray-800 font-bold text-xl md:text-2xl uppercase tracking-[0.2em]">THANK YOU</h3>
+            <h3 className="text-gray-800 font-bold text-2xl md:text-2xl uppercase tracking-[0.2em]">THANK YOU</h3>
             <div className="h-px bg-gray-300 w-32 md:w-48"></div>
           </div>
 
@@ -142,8 +142,8 @@ export default function About() {
                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zm-7.518-.267A8.25 8.25 0 1120.25 10.5M8.288 14.212A5.25 5.25 0 1117.25 10.5" />
                  </svg>
                </div>
-               <h4 className="text-gray-900 font-bold text-xl mb-6">Strategic Expertise</h4>
-               <ul className="text-gray-700 text-[15px] font-medium leading-relaxed text-left w-full space-y-4">
+               <h4 className="text-gray-900 font-bold text-2xl mb-6">Strategic Expertise</h4>
+               <ul className="text-gray-700 text-[17px] font-medium leading-relaxed text-left w-full space-y-4">
                  <li className="flex items-start gap-3">
                    <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-2 shrink-0"></div>
                    <span>Data-driven campaign strategies</span>
@@ -168,8 +168,8 @@ export default function About() {
                     <path d="M21.99 8c0-.72-.37-1.35-.94-1.7L12 1 2.95 6.3C2.38 6.65 2 7.28 2 8v2c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V8zm-11 12.93V20c-3.99-1.04-7-4.9-7-8.99V9l8-4 8 4v2.01c0 4.09-3.01 7.95-7 8.99v1.93z"/>
                  </svg>
                </div>
-               <h4 className="text-gray-900 font-bold text-xl mb-6">Trust & Reliability</h4>
-               <ul className="text-gray-700 text-[15px] font-medium leading-relaxed text-left w-full space-y-4">
+               <h4 className="text-gray-900 font-bold text-2xl mb-6">Trust & Reliability</h4>
+               <ul className="text-gray-700 text-[17px] font-medium leading-relaxed text-left w-full space-y-4">
                  <li className="flex items-start gap-3">
                    <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-2 shrink-0"></div>
                    <span>Transparent and accountable processes</span>
@@ -193,8 +193,8 @@ export default function About() {
                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
                  </svg>
                </div>
-               <h4 className="text-gray-900 font-bold text-xl mb-6">Execution Excellence</h4>
-               <ul className="text-gray-700 text-[15px] font-medium leading-relaxed text-left w-full space-y-4">
+               <h4 className="text-gray-900 font-bold text-2xl mb-6">Execution Excellence</h4>
+               <ul className="text-gray-700 text-[17px] font-medium leading-relaxed text-left w-full space-y-4">
                  <li className="flex items-start gap-3">
                    <div className="w-1.5 h-1.5 rounded-full bg-[#c8102e] mt-2 shrink-0"></div>
                    <span>Seamless on-ground implementation</span>
@@ -215,7 +215,7 @@ export default function About() {
           <div className="mt-24">
             <div className="flex items-center justify-center gap-6 mb-12">
               <div className="h-px bg-gray-300 w-16 md:w-32"></div>
-              <h3 className="text-gray-800 font-bold text-[13px] md:text-lg uppercase tracking-widest text-center whitespace-nowrap">
+              <h3 className="text-gray-800 font-bold text-[15px] md:text-xl uppercase tracking-widest text-center whitespace-nowrap">
                 YOUR SUCCESS IS OUR ONLY PRIORITY
               </h3>
               <div className="h-px bg-gray-300 w-16 md:w-32"></div>
@@ -225,7 +225,7 @@ export default function About() {
                <img src="/logo.png" alt="CPCR Logo" className="h-24 w-auto" />
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 text-gray-700 font-medium text-[15px] md:text-lg mt-8">
+            <div className="flex flex-wrap items-center justify-center gap-4 text-gray-700 font-medium text-[17px] md:text-xl mt-8">
                <a href="https://cpcr.in" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-[#c8102e] transition-colors">
                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
@@ -260,10 +260,10 @@ export default function About() {
       {/* Bottom CTA Banner */}
       <section className="max-w-7xl mx-auto px-6">
         <div className="bg-[#c8102e] rounded-xl flex flex-col md:flex-row items-center justify-between gap-8 py-10 px-8 md:px-12 shadow-xl">
-          <h3 className="text-xl md:text-2xl lg:text-3xl text-white font-bold tracking-tight text-center md:text-left">
+          <h3 className="text-2xl md:text-2xl lg:text-3xl text-white font-bold tracking-tight text-center md:text-left">
             Let's work together for better political outcomes.
           </h3>
-          <Link to="/contact" className="w-full md:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-[#c8102e] text-white font-bold py-3.5 px-8 rounded transition-colors whitespace-nowrap text-center text-lg shrink-0">
+          <Link to="/contact" className="w-full md:w-auto bg-transparent border-2 border-white hover:bg-white hover:text-[#c8102e] text-white font-bold py-3.5 px-8 rounded transition-colors whitespace-nowrap text-center text-xl shrink-0">
             Request a Meeting
           </Link>
         </div>

@@ -29,9 +29,9 @@ export default function PrivacyPolicy() {
               
               {/* Centered Breadcrumbs */}
               <div className="flex items-center gap-3 px-8">
-                <Link to="/" className="text-[10px] font-medium tracking-[0.25em] uppercase text-black hover:text-gray-500 transition-colors">HOME</Link>
-                <span className="text-gray-600 text-[10px]">/</span>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-gray-500 font-medium">PRIVACY POLICY</span>
+                <Link to="/" className="text-[12px] font-medium tracking-[0.25em] uppercase text-black hover:text-gray-500 transition-colors">HOME</Link>
+                <span className="text-gray-600 text-[12px]">/</span>
+                <span className="text-[12px] tracking-[0.25em] uppercase text-gray-500 font-medium">PRIVACY POLICY</span>
               </div>
               
               {/* Invisible right spacer to maintain perfect center alignment */}
@@ -59,8 +59,8 @@ export default function PrivacyPolicy() {
               {/* Floating Gray Dot next to the first paragraph */}
               <div className="absolute left-0 top-[4.5rem] w-4 h-4 rounded-full bg-gray-200" />
               
-              <div className="space-y-8 text-[15px] text-gray-500 font-light">
-                <p className="text-[13px] tracking-wide mb-8">Last updated: May 24, 2024</p>
+              <div className="space-y-8 text-[17px] text-gray-500 font-light">
+                <p className="text-[15px] tracking-wide mb-8">Last updated: May 24, 2024</p>
                 
                 <p className="leading-loose">
                   This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
@@ -76,7 +76,7 @@ export default function PrivacyPolicy() {
                 
                 <h3 className="text-xl md:text-2xl font-medium text-black mb-6">Interpretation</h3>
                 
-                <p className="leading-loose text-[15px] text-gray-500 font-light">
+                <p className="leading-loose text-[17px] text-gray-500 font-light">
                   The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.
                 </p>
 
@@ -86,11 +86,11 @@ export default function PrivacyPolicy() {
                   
                   <h3 className="text-xl md:text-2xl font-medium text-black mb-6">Definitions</h3>
                   
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-8">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-8">
                     For the purposes of this Privacy Policy:
                   </p>
 
-                  <ul className="space-y-6 text-[15px] text-gray-500 font-light list-none pl-0">
+                  <ul className="space-y-6 text-[17px] text-gray-500 font-light list-none pl-0">
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
                       <span className="font-medium text-gray-500">Account</span> means a unique account created for You to access our Service or parts of our Service.
@@ -150,14 +150,14 @@ export default function PrivacyPolicy() {
                 
                 <h4 className="text-[17px] font-medium text-black mb-4">Personal Data</h4>
                 
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                   While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:
                 </p>
 
                 <div className="relative">
                   {/* Floating Dot */}
                   <div className="absolute -left-10 md:-left-16 top-2 w-4 h-4 rounded-full bg-gray-200" />
-                  <ul className="space-y-4 text-[15px] text-gray-500 font-light list-none pl-0 mb-8">
+                  <ul className="space-y-4 text-[17px] text-gray-500 font-light list-none pl-0 mb-8">
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
                       Email address
@@ -175,16 +175,16 @@ export default function PrivacyPolicy() {
 
                 <h4 className="text-[17px] font-medium text-black mb-4 mt-12">Usage Data</h4>
                 
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                   Usage Data is collected automatically when using the Service.
                 </p>
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                   Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.
                 </p>
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                   When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.
                 </p>
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-8">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-8">
                   We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.
                 </p>
 
@@ -193,11 +193,11 @@ export default function PrivacyPolicy() {
                   <div className="absolute -left-10 md:-left-16 top-[4.5rem] w-4 h-4 rounded-full bg-gray-200" />
                   <h4 className="text-[17px] font-medium text-black mb-4 mt-12">Tracking Technologies and Cookies</h4>
                   
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                     We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:
                   </p>
 
-                  <ul className="space-y-6 text-[15px] text-gray-500 font-light list-none pl-0 mb-8">
+                  <ul className="space-y-6 text-[17px] text-gray-500 font-light list-none pl-0 mb-8">
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
                       <span className="font-medium text-gray-500">Cookies or Browser Cookies.</span> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.
@@ -208,15 +208,15 @@ export default function PrivacyPolicy() {
                     </li>
                   </ul>
 
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                     Cookies can be "Persistent" or "Session" Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. You can learn more about cookies on <span className="text-black font-medium hover:text-red-600 cursor-pointer transition-colors">TermsFeed website</span> article.
                   </p>
                   
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                     We use both Session and Persistent Cookies for the purposes set out below:
                   </p>
 
-                  <ul className="space-y-6 text-[15px] text-gray-500 font-light list-none pl-0 mb-8">
+                  <ul className="space-y-6 text-[17px] text-gray-500 font-light list-none pl-0 mb-8">
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
                       <span className="font-medium text-gray-500">Necessary / Essential Cookies</span> Type: Session Cookies Administered by: Us Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.
@@ -231,7 +231,7 @@ export default function PrivacyPolicy() {
                     </li>
                   </ul>
 
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-8">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-8">
                     For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.
                   </p>
                 </div>
@@ -240,11 +240,11 @@ export default function PrivacyPolicy() {
               {/* Use of Your Personal Data */}
               <div className="mt-16 relative">
                 <h3 className="text-xl md:text-2xl font-medium text-black mb-6">Use of Your Personal Data</h3>
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                   The Company may use Personal Data for the following purposes:
                 </p>
 
-                <ul className="space-y-6 text-[15px] text-gray-500 font-light list-none pl-0 mb-8">
+                <ul className="space-y-6 text-[17px] text-gray-500 font-light list-none pl-0 mb-8">
                   <li className="relative pl-6">
                     <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
                     <span className="font-medium text-gray-500">To provide and maintain our Service</span>, including to monitor the usage of our Service.
@@ -281,11 +281,11 @@ export default function PrivacyPolicy() {
                   </li>
                 </ul>
 
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-6 mt-8">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-6 mt-8">
                   We may share Your personal information in the following situations:
                 </p>
 
-                <ul className="space-y-6 text-[15px] text-gray-500 font-light list-none pl-0 mb-8">
+                <ul className="space-y-6 text-[17px] text-gray-500 font-light list-none pl-0 mb-8">
                   <li className="relative pl-6">
                     <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
                     <span className="font-medium text-gray-500">With Service Providers:</span> We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You.
@@ -309,10 +309,10 @@ export default function PrivacyPolicy() {
               <div className="mt-16 space-y-12 relative">
                 <div>
                   <h3 className="text-xl md:text-2xl font-medium text-black mb-6">Retention of Your Personal Data</h3>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                     The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.
                   </p>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light">
                     The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.
                   </p>
                 </div>
@@ -321,23 +321,23 @@ export default function PrivacyPolicy() {
                   {/* Floating Dot */}
                   <div className="absolute -left-10 md:-left-16 top-[4.5rem] w-4 h-4 rounded-full bg-gray-200" />
                   <h3 className="text-xl md:text-2xl font-medium text-black mb-6">Transfer of Your Personal Data</h3>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                     Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.
                   </p>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                     Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.
                   </p>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light">
                     The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-xl md:text-2xl font-medium text-black mb-6">Delete Your Personal Data</h3>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                     You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.
                   </p>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light">
                     Our Service may give You the ability to delete certain information about You from within the Service.
                   </p>
                 </div>
@@ -348,7 +348,7 @@ export default function PrivacyPolicy() {
                 <h2 className="text-3xl md:text-[2.25rem] font-medium text-black tracking-tight mb-8">Disclosure of Your Personal Data</h2>
                 
                 <h4 className="text-[17px] font-medium text-black mb-4">Business Transactions</h4>
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-8">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-8">
                   If the Company is involved in a merger, acquisition or asset sale, Your Personal Data may be transferred. We will provide notice before Your Personal Data is transferred and becomes subject to a different Privacy Policy.
                 </p>
 
@@ -356,16 +356,16 @@ export default function PrivacyPolicy() {
                   {/* Floating Dot */}
                   <div className="absolute -left-10 md:-left-16 top-2 w-4 h-4 rounded-full bg-gray-200" />
                   <h4 className="text-[17px] font-medium text-black mb-4">Law enforcement</h4>
-                  <p className="leading-loose text-[15px] text-gray-500 font-light mb-8">
+                  <p className="leading-loose text-[17px] text-gray-500 font-light mb-8">
                     Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).
                   </p>
                 </div>
 
                 <h4 className="text-[17px] font-medium text-black mb-4">Other legal requirements</h4>
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-6">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-6">
                   The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:
                 </p>
-                <ul className="space-y-4 text-[15px] text-gray-500 font-light list-none pl-0 mb-16">
+                <ul className="space-y-4 text-[17px] text-gray-500 font-light list-none pl-0 mb-16">
                   <li className="relative pl-6">
                     <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
                     Comply with a legal obligation
@@ -389,7 +389,7 @@ export default function PrivacyPolicy() {
                 </ul>
 
                 <h2 className="text-3xl md:text-[2.25rem] font-medium text-black tracking-tight mb-8">Security of Your Personal Data</h2>
-                <p className="leading-loose text-[15px] text-gray-500 font-light mb-16">
+                <p className="leading-loose text-[17px] text-gray-500 font-light mb-16">
                   The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.
                 </p>
 

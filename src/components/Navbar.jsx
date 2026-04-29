@@ -42,7 +42,7 @@ export default function Navbar() {
                 <Link 
                   key={link.name} 
                   to={link.path} 
-                  className={`text-[13px] font-bold transition-colors ${isActive ? 'text-[#c8102e]' : 'text-gray-700 hover:text-[#c8102e]'}`}
+                  className={`text-[15px] font-bold transition-colors ${isActive ? 'text-[#c8102e]' : 'text-gray-700 hover:text-[#c8102e]'}`}
                 >
                   {link.name}
                 </Link>
@@ -52,7 +52,7 @@ export default function Navbar() {
 
           {/* Desktop Button */}
           <div className="hidden lg:block">
-            <Link to="/contact" className="bg-[#c8102e] hover:bg-red-800 text-white text-[13px] font-bold py-2.5 px-6 rounded transition-colors">
+            <Link to="/contact" className="bg-[#c8102e] hover:bg-red-800 text-white text-[15px] font-bold py-2.5 px-6 rounded transition-colors">
               Contact
             </Link>
           </div>
@@ -114,15 +114,15 @@ export default function Navbar() {
                 
                 <div className="mt-10 pt-10 border-t border-gray-100 grid grid-cols-2 gap-8">
                    <div>
-                    <h3 className="text-gray-400 font-medium mb-4 text-xs uppercase tracking-wider">Contact</h3>
-                    <ul className="space-y-2 text-sm text-gray-800 font-medium">
+                    <h3 className="text-gray-400 font-medium mb-4 text-sm uppercase tracking-wider">Contact</h3>
+                    <ul className="space-y-2 text-base text-gray-800 font-medium">
                       <li>connect@cpcr.in</li>
                       <li>+91 9936599267</li>
                     </ul>
                    </div>
                    <div>
-                    <h3 className="text-gray-400 font-medium mb-4 text-xs uppercase tracking-wider">Address</h3>
-                    <ul className="space-y-2 text-sm text-gray-800 font-medium">
+                    <h3 className="text-gray-400 font-medium mb-4 text-sm uppercase tracking-wider">Address</h3>
+                    <ul className="space-y-2 text-base text-gray-800 font-medium">
                       <li>Lucknow Uttar Pradesh</li>
                       <li>India</li>
                     </ul>
