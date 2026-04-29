@@ -50,8 +50,8 @@ export default function Home() {
     const fetchData = async (retries = 3) => {
       try {
         const [projectsRes, blogsRes] = await Promise.all([
-          axios.get(`${API_URL}/api/assignments`, { timeout: 15000 }),
-          axios.get(`${API_URL}/api/blogs`, { timeout: 15000 })
+          axios.get(`${API_URL}/api/assignments`),
+          axios.get(`${API_URL}/api/blogs`)
         ])
         setProjects(projectsRes.data)
         setPosts(blogsRes.data)
