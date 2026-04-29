@@ -47,7 +47,7 @@ export default function Services() {
   useEffect(() => {
     const fetchAssignments = async (retries = 3) => {
       try {
-        const res = await axios.get(`${API_URL}/api/assignments`, { timeout: 15000 })
+        const res = await axios.get(`${API_URL}/api/assignments`)
         setProjects(res.data)
       } catch (err) {
         if (retries > 0) {

@@ -25,7 +25,7 @@ export default function Blog() {
   useEffect(() => {
     const fetchPosts = async (retries = 3) => {
       try {
-        const res = await axios.get(API_URL, { timeout: 15000 })
+        const res = await axios.get(API_URL)
         setPosts(res.data)
       } catch (err) {
         if (retries > 0) {
