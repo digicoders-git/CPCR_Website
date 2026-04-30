@@ -101,3 +101,101 @@ body { font-family: 'Lora', serif; background: #fff; color: #1a1a1a; overflow-x:
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* Blog Content Custom Formatting */
+.blog-content-container {
+  text-align: center !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.blog-content-container > * {
+  text-align: center !important;
+  width: 100%;
+}
+
+.blog-content-container img {
+  margin: 2.5rem auto !important;
+  border-radius: 1.5rem;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.blog-content-container table {
+  margin: 3rem auto !important;
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 900px;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  overflow-x: auto;
+  display: block;
+}
+
+.blog-content-container th, 
+.blog-content-container td {
+  padding: 14px 24px;
+  border: 1px solid #eee;
+  text-align: center;
+}
+
+.blog-content-container th {
+  background: #fcfcfc;
+  font-weight: 700;
+  color: #c8102e;
+}
+
+/* Center source/captions */
+.blog-content-container em,
+.blog-content-container i {
+  display: block;
+  text-align: center !important;
+  margin-top: -1.5rem;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.blog-content-container p {
+  margin-bottom: 2rem;
+  line-height: 1.9;
+  font-size: 1.15rem;
+  color: #475569;
+  white-space: normal !important;
+}
+
+.blog-content-container strong, 
+.blog-content-container b {
+  color: #1a1a1a;
+  font-weight: 800;
+}
+
+.blog-content-container h1, 
+.blog-content-container h2, 
+.blog-content-container h3, 
+.blog-content-container h4 {
+  margin-top: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.blog-content-container ul, 
+.blog-content-container ol {
+  display: inline-block;
+  text-align: left;
+  margin: 1.5rem auto;
+  padding-left: 1.5rem;
+}
+
+.blog-content-container li {
+  margin-bottom: 0.5rem;
+}

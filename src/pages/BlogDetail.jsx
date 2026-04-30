@@ -88,28 +88,29 @@ export default function BlogDetail() {
       {/* Article Content */}
       <section className="max-w-3xl mx-auto px-6">
         <div className="prose prose-lg md:prose-xl prose-red max-w-none text-gray-700 font-medium leading-relaxed">
-          <p className="text-xl md:text-2xl text-gray-900 font-semibold mb-10 leading-snug">
+          <p className="text-xl md:text-2xl text-gray-900 font-semibold mb-10 leading-snug text-center">
             {post.excerpt}
           </p>
           
-          <div className="blog-content-container" dangerouslySetInnerHTML={{ __html: post.content }} />
+          <div className="blog-content-container text-center" dangerouslySetInnerHTML={{ __html: post.content }} />
         </div>
 
         {/* Share & Tags */}
-        <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-center justify-between gap-6 mb-20">
-          <div className="flex gap-2">
-            <span className="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-bold">#PoliticalStrategy</span>
-            <span className="bg-gray-100 text-gray-600 px-4 py-2 rounded-full text-sm font-bold">#DataAnalytics</span>
+        <div className="mt-16 pt-10 border-t border-gray-100 flex flex-col items-center justify-center gap-8 mb-20">
+          <div className="flex flex-wrap justify-center gap-3">
+            <span className="bg-red-50 text-[#c8102e] px-5 py-2 rounded-full text-sm font-bold border border-red-100">#PoliticalStrategy</span>
+            <span className="bg-red-50 text-[#c8102e] px-5 py-2 rounded-full text-sm font-bold border border-red-100">#DataAnalytics</span>
+            <span className="bg-red-50 text-[#c8102e] px-5 py-2 rounded-full text-sm font-bold border border-red-100">#CPCR_Insights</span>
           </div>
           
-          <div className="flex items-center gap-4">
-            <span className="text-base font-bold text-gray-900 uppercase tracking-widest">Share:</span>
-            <div className="flex gap-2">
-              <button className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-[#c8102e] hover:bg-red-50 transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+          <div className="flex flex-col items-center gap-4">
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">Share this Article</span>
+            <div className="flex gap-4">
+              <button title="Share on Twitter" className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:text-white hover:bg-[#1DA1F2] transition-all duration-300 shadow-sm">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
               </button>
-              <button className="w-10 h-10 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 hover:text-[#c8102e] hover:bg-red-50 transition-colors">
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              <button title="Share on LinkedIn" className="w-12 h-12 rounded-full bg-gray-50 flex items-center justify-center text-gray-600 hover:text-white hover:bg-[#0077b5] transition-all duration-300 shadow-sm">
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               </button>
             </div>
           </div>
@@ -123,7 +124,7 @@ export default function BlogDetail() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Related Insights</h2>
             <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {relatedPosts.map((relatedPost, index) => (
               <motion.article 
                 key={relatedPost._id}
@@ -131,7 +132,7 @@ export default function BlogDetail() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer"
+                className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-gray-100 overflow-hidden flex flex-col group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer w-full md:w-[calc(33.333%-22px)] min-w-[300px]"
               >
                 <Link to={`/blog/${relatedPost._id}`} className="block h-48 w-full overflow-hidden relative">
                   <img 

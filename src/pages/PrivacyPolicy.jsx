@@ -60,7 +60,9 @@ export default function PrivacyPolicy() {
               <div className="absolute left-0 top-[4.5rem] w-4 h-4 rounded-full bg-gray-200" />
               
               <div className="space-y-8 text-[17px] text-gray-500 font-light">
-                <p className="text-[15px] tracking-wide mb-8">Last updated: May 24, 2024</p>
+                <p className="text-[15px] tracking-wide mb-8">
+                  Last updated: {new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                </p>
                 
                 <p className="leading-loose">
                   This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.
@@ -101,7 +103,7 @@ export default function PrivacyPolicy() {
                     </li>
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
-                      <span className="font-medium text-gray-500">Company</span> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Centre for Political and Civic Research, Plot No. 100, Nemi Nagar Extension, Block A, Vaishali Nagar, Jaipur, Rajasthan 302021.
+                      <span className="font-medium text-gray-500">Company</span> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Centre for Political and Civic Research, Lucknow Uttar Pradesh, India.
                     </li>
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
@@ -109,7 +111,7 @@ export default function PrivacyPolicy() {
                     </li>
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
-                      <span className="font-medium text-gray-500">Country</span> refers to: Rajasthan, India
+                      <span className="font-medium text-gray-500">Country</span> refers to: Lucknow, India
                     </li>
                     <li className="relative pl-6">
                       <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-red-600" />
