@@ -1156,7 +1156,7 @@ export default function Services() {
               <div className="h-px bg-gray-300 w-16 md:w-32"></div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-base font-bold text-gray-400 uppercase tracking-widest pb-20">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 text-base font-bold text-gray-400 lowercase tracking-widest pb-20">
                <a href="https://cpcr.in" className="flex items-center gap-2 hover:text-[#c8102e] transition-colors">
                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" /></svg>
                  cpcr.in
