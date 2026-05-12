@@ -117,7 +117,7 @@ export default function Navbar() {
                     <h3 className="text-gray-400 font-medium mb-4 text-sm uppercase tracking-wider">Contact</h3>
                     <ul className="space-y-2 text-base text-gray-800 font-medium">
                       <li>connect@cpcr.in</li>
-                      <li>+91 9936599267</li>
+                      <li>+91 7758855308</li>
                     </ul>
                    </div>
                    <div>

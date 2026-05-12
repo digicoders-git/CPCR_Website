@@ -21,10 +21,10 @@ export default function About() {
 
       {/* Content Section */}
       <section className="max-w-7xl mx-auto px-6 lg:px-20 mb-20">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col items-start">
           
-          {/* Left Text */}
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
+          {/* Text Only */}
+          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="w-full">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">Who We Are</h2>
             
             <div className="space-y-5 text-gray-700 font-medium leading-relaxed text-[17px]">
@@ -40,13 +40,6 @@ export default function About() {
               <p>
                 At the Centre for Political and Civic Research, we go beyond mere analysis of public opinion—we connect the dots to offer a true 360° perspective that drives informed decision-making, enhances campaign effectiveness, and delivers measurable electoral victories. As your trusted advisor, we are dedicated to building political campaigns rooted in clarity, credibility, and strategic insight.
               </p>
-            </div>
-          </motion.div>
-
-          {/* Right Image */}
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.6 }} className="w-full lg:w-1/2">
-            <div className="rounded-2xl overflow-hidden shadow-lg h-[400px] lg:h-[500px]">
-              <img src="/about.png" alt="About CPCR" className="w-full h-full object-cover" />
             </div>
           </motion.div>
 
@@ -84,10 +77,10 @@ export default function About() {
 
       {/* Mission Section */}
       <section className="max-w-7xl mx-auto px-6 lg:px-20 mb-20">
-        <div className="bg-gray-50 rounded-3xl border border-gray-100 overflow-hidden flex flex-col md:flex-row items-stretch">
+        <div className="bg-gray-50 rounded-3xl border border-gray-100 overflow-hidden">
           
-          {/* Mission Text */}
-          <div className="w-full md:w-1/2 p-10 lg:p-16 flex items-center">
+          {/* Mission Text - Full Width */}
+          <div className="w-full p-10 lg:p-16 flex items-center">
             <div className="flex items-start gap-6">
               <div className="w-16 h-16 shrink-0 text-[#c8102e]">
                 <svg fill="currentColor" viewBox="0 0 24 24">
@@ -103,11 +96,6 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </div>
-
-          {/* Mission Image */}
-          <div className="w-full md:w-1/2 h-[300px] md:h-auto bg-gray-200">
-            <img src="/about-mission.png" alt="Our Mission" className="w-full h-full object-cover" />
           </div>
 
         </div>
@@ -247,7 +235,7 @@ export default function About() {
                  <span>
                    {/* <a href="tel:7007700557" className="hover:text-[#c8102e] transition-colors">7007700557</a>
                    {' | '} */}
-                   <a href="tel:9936599267" className="hover:text-[#c8102e] transition-colors">9936599267</a>
+                   <a href="tel:7758855308" className="hover:text-[#c8102e] transition-colors">7758855308</a>
                  </span>
                </div>
             </div>
