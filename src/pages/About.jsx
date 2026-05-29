@@ -46,6 +46,95 @@ export default function About() {
         </div>
       </section>
 
+      {/* Leadership Section */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-20 mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Founders</h2>
+          <div className="w-12 h-[3px] bg-[#c8102e] mx-auto rounded-full mb-6"></div>
+          <p className="text-gray-500 font-medium text-lg max-w-2xl mx-auto font-sans">
+            The visionary leadership behind CPCR's strategic on-ground insights and campaign success.
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-12 lg:gap-16">
+          {/* Founder 1: Parveen Singh Chauhan */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }} 
+            className="bg-gray-50 rounded-3xl border border-gray-100 p-6 md:p-8 lg:p-10 flex flex-col md:flex-row items-center md:items-start gap-8 lg:gap-12 hover:shadow-xl transition-all duration-300 group"
+          >
+            {/* Image Container with aspect-[3/4] to prevent cropping portrait images */}
+            <div className="w-full sm:w-[280px] md:w-[300px] shrink-0 overflow-hidden rounded-2xl bg-gray-200 aspect-[3/4] shadow-md relative">
+              <img 
+                src="/founders/parveen_singh.png" 
+                alt="Parveen Singh Chauhan" 
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-40"></div>
+            </div>
+            
+            {/* Content Details */}
+            <div className="flex-1">
+              <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 font-serif">
+                Parveen Singh Chauhan
+              </h3>
+              <p className="text-[#c8102e] font-bold tracking-wider text-sm uppercase mb-4 font-sans">
+                Founder, CPCR
+              </p>
+              <div className="w-8 h-[2px] bg-[#c8102e] mb-6 rounded-full"></div>
+              <div className="space-y-4 text-gray-600 font-medium leading-relaxed text-[16px] font-sans">
+                <p>
+                  For the last five years, I have worked at the intersection of ground research and electoral management, partnering with numerous individual clients and political parties to shape winning campaign strategies. As a Law Graduate with a Master’s degree in Public Administration, I bring a unique understanding of legal frameworks and policy dynamics to the Centre for Political and Civic Research (CPCR).
+                </p>
+                <p>
+                  My approach relies heavily on precise field research and data-driven intelligence. By bridging the gap between grassroots realities, administrative policies, and high-level strategy, I help political leaders and organizations navigate complex electoral landscapes and make decisions that truly resonate with their constituencies.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Founder 2: Bhupender Singh */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }} 
+            className="bg-gray-50 rounded-3xl border border-gray-100 p-6 md:p-8 lg:p-10 flex flex-col md:flex-row items-center md:items-start gap-8 lg:gap-12 hover:shadow-xl transition-all duration-300 group"
+          >
+            {/* Image Container with aspect-[3/4] to prevent cropping portrait images */}
+            <div className="w-full sm:w-[280px] md:w-[300px] shrink-0 overflow-hidden rounded-2xl bg-gray-200 aspect-[3/4] shadow-md relative">
+              <img 
+                src="/founders/bhupendra_singh.png" 
+                alt="Bhupender Singh" 
+                className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-40"></div>
+            </div>
+            
+            {/* Content Details */}
+            <div className="flex-1">
+              <h3 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 font-serif">
+                Bhupender Singh
+              </h3>
+              <p className="text-[#c8102e] font-bold tracking-wider text-sm uppercase mb-4 font-sans">
+                Co-Founder, CPCR
+              </p>
+              <div className="w-8 h-[2px] bg-[#c8102e] mb-6 rounded-full"></div>
+              <div className="space-y-4 text-gray-600 font-medium leading-relaxed text-[16px] font-sans">
+                <p>
+                  As the Co-Founder of the Centre for Political and Civic Research (CPCR), I leverage a Master’s degree in Sociology and five years of specialized experience to spearhead our ground operations and survey management initiatives. My academic background provides a strong theoretical framework for our work, ensuring that our methodologies are deeply attuned to human behavior and complex demographic environments.
+                </p>
+                <p>
+                  Over nearly half a decade, I have successfully managed large-scale field surveys for a diverse array of political parties and individual candidates, focusing on capturing the authentic voice of the electorate. By combining sociological insight with strict operational precision, I lead cross-functional field teams to deliver the high-quality, unfiltered civic intelligence that forms the foundation of our winning election strategies and community-centric social impact.
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Stats Section */}
       <section className="bg-gray-50 border-y border-gray-100 py-12 px-4 md:px-6 mb-20">
         <div className="max-w-7xl mx-auto">
